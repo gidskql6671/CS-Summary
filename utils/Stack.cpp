@@ -70,11 +70,11 @@ void Stack<T>::push(T value){
 }
 
 // 스택의 가장 위의 원소를 꺼내어 반환한다.
-// 원소가 없을 시, Error.cpp의 StackEmpty 발생
+// 원소가 없을 시, Error.cpp의 ElementEmpty 발생
 template <typename T> 
 T Stack<T>::pop(){
     if (empty())
-         throw Error::StackEmpty;
+         throw Error::ElementEmpty;
     else
         return _stack[_top--];
 }

@@ -1,3 +1,3 @@
 enum class Error{
-    StackEmpty
+    ElementEmpty
 };
