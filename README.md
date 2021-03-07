@@ -9,9 +9,6 @@ data structure
     + Stack.cpp
     + Queue.cpp
 
-## utils/
-자료구조들을 저장.
-
 ### Error.cpp
 각종 자료구조의 에러 핸들링에서 throw할 Enum을 구현.
 
