@@ -5,78 +5,91 @@
 #endif
 
 
+template <typename T> 
 class Stack{
 private:
-    int top, maxSize;
-    char *stack;
+    int _top, _maxSize;
+    T *_stack;
+    
+    bool isFull();
 public:
     Stack(int size = 10);
     
-    bool isFull();
-    bool isEmpty();
+    bool empty();
     
-    int push(int value);
-    int pop();
+    void push(T value);
+    T pop();
     
-    void printStackSize();
-    void printStack();
-    void printTop();
+    T top();
+    int size();
 };
 
-Stack::Stack(int size){
-    maxSize = size;
-    stack = new char[maxSize];
-    top = -1;
+// 생성자. size 기본값 10
+template <typename T> 
+Stack<T>::Stack(int size){
+    _maxSize = size;
+    _stack = new T[_maxSize];
+    _top = -1;
 }
 
-
-bool Stack::isFull(){
-    if (top >= maxSize)
+// 스택이 꽉차있는지 여부를 확인
+template <typename T> 
+bool Stack<T>::isFull(){
+    if (_top >= _maxSize)
         return true;
     else
         return false;
 }
-bool Stack::isEmpty(){
-    if (top <= -1)
+
+// 스택이 비어있는지 여부를 확인
+template <typename T> 
+bool Stack<T>::empty(){
+    if (_top <= -1)
         return true;
     else
         return false;
 }
 
-
-int Stack::push(int value){
-    top++;
+// 스택에 value 값을 push해준다.
+template <typename T> 
+void Stack<T>::push(T value){
+    _top++;
     
     // 스택이 모두 차면, size doubling 해준다.
     if (isFull()){
-        char *newStack = new char[maxSize * 2];
-        for (int i = 0; i < maxSize; i++)
-            newStack[i] = stack[i];
-        delete[] stack;
-        stack = newStack;
+        T *newStack = new T[_maxSize * 2];
+        for (int i = 0; i < _maxSize; i++)
+            newStack[i] = _stack[i];
+        delete[] _stack;
+        _stack = newStack;
         
-        maxSize *= 2;
+        _maxSize *= 2;
     }
     
-    stack[top] = value;
-    return stack[top];
+    _stack[_top] = value;
 }
-// 원소가 없을 시, Error.cpp의 Error 발생
-int Stack::pop(){
-    if (isEmpty())
+
+// 스택의 가장 위의 원소를 꺼내어 반환한다.
+// 원소가 없을 시, Error.cpp의 StackEmpty 발생
+template <typename T> 
+T Stack<T>::pop(){
+    if (empty())
          throw Error::StackEmpty;
     else
-        return stack[top--];
+        return _stack[_top--];
 }
 
+// 스택의 top을 반환한다.
+template <typename T> 
+T Stack<T>::top(){
+    if (empty())
+        throw Error::StackEmpty;
+    else
+        return _stack[_top];   
+}
 
-void Stack::printStackSize(){
-    printf("maxSize : %d\n", maxSize);
-}
-void Stack::printStack(){
-    for(int i = top; i >= 0; i--)
-        printf("상단으로부터 %d번째 값 : %d\n", top - i + 1, stack[i]);
-}
-void Stack::printTop(){
-    printf("Stack top : %d\n", top);
+// 현재 스택의 size를 반환한다.
+template <typename T> 
+int Stack<T>::size(){
+    return _top + 1;
 }
