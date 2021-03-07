@@ -1,7 +1,8 @@
 # data-structure
-ï¿½ì˜„?Œ·?š­?Ž„è­°ê³•ï¿½ï¿½ ï§žê³¸? ’ ?´?‹ì½ï¿½ë¹è¹‚ëŒ?˜„.
+ÀÚ·á±¸Á¶¸¦ Á÷Á¢ ±¸Çö
+ÀÚ·á±¸Á¶¸¦ Á÷Á¢ ±¸ÇöÇØº¸ÀÚ.
 
-## ï¿½ë´½æ¿¡ì’–? ¥ï¿½ë“ƒ ?´?Šâ??
+## ÇÁ·ÎÁ§Æ® ±¸Á¶
 data structure
 + main.cpp
 + utils/
@@ -10,7 +11,7 @@ data structure
 
 
 ### main.cpp
-ï¿½ë?’ï¿½?’ªï¿½ë“ƒ & ï¿½ë–Žï¿½ë»¾ï¿½ìŠœ ï¿½ë™†ï¿½ì”ª
+Å×½ºÆ® & ½ÇÇà¿ë ÆÄÀÏ
 
 ### utils
-ï¿½ì˜„?Œ·?š­?Ž„è­°ê³•ë±¾ï¿½?“£ ï¿½ï¿½ï¿½ï¿½?˜£ï¿½ë¸· ï¿½ì‚ï¿½ì ™.
+ÀÚ·á±¸Á¶µéÀ» ÀúÀåÇÒ ¿¹Á¤.
