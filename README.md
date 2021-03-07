@@ -4,14 +4,16 @@
 
 ## 프로젝트 구조
 data structure
-+ main.cpp
 + utils/
     + Error.cpp
     + Stack.cpp
+    + Queue.cpp
 
+## utils/
+자료구조들을 저장.
 
-### main.cpp
-테스트 & 실행용 파일
+### Error.cpp
+각종 자료구조의 에러 핸들링에서 throw할 Enum을 구현.
 
-### utils
-자료구조들을 저장할 예정.
+### Stack.cpp & Queue.cpp
+Stack과 Queue 구현
