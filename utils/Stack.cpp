@@ -11,7 +11,7 @@ private:
     int _top, _maxSize;
     T *_stack;
     
-    bool isFull();
+    bool _isFull();
 public:
     Stack(int size = 10);
     
@@ -34,7 +34,7 @@ Stack<T>::Stack(int size){
 
 // 스택이 꽉차있는지 여부를 확인
 template <typename T> 
-bool Stack<T>::isFull(){
+bool Stack<T>::_isFull(){
     if (_top >= _maxSize)
         return true;
     else
@@ -56,7 +56,7 @@ void Stack<T>::push(T value){
     _top++;
     
     // 스택이 모두 차면, size doubling 해준다.
-    if (isFull()){
+    if (_isFull()){
         T *newStack = new T[_maxSize * 2];
         for (int i = 0; i < _maxSize; i++)
             newStack[i] = _stack[i];
