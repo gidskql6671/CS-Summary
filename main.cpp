@@ -1,10 +1,10 @@
 #include <iostream>
-#include "utils/Stack.cpp"
+#include "utils/Queue.cpp"
 using namespace std;
 
 
 int main(){
-    Stack stack(5);
+    Queue<int> queue(5);
     
     while(true){
         int value;
@@ -13,13 +13,11 @@ int main(){
         if (value == -1)
             break;
         else if (value == 0)
-            printf("pop : %d\n", stack.pop());
+            printf("pop : %d\n", queue.pop());
         else
-            stack.push(value);
+            queue.push(value);
         
-        stack.printStack();
-        stack.printStackSize();
-        stack.printTop();
+        printf("queue size : %d, front & rear : %d & %d\n", queue.size(), queue.ff(), queue.rr());
     }
     
     return 0;
