@@ -25,13 +25,6 @@ public:
     T front();
     T back();
     int size();
-    
-    int ff(){
-        return _front;
-    }
-    int rr(){
-        return _rear;
-    }
 };
 
 template <typename T>
