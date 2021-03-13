@@ -12,6 +12,7 @@ private:
     T *_stack;
     
     bool _isFull();
+    void _sizeDoubling();
 public:
     Stack(int size = 10);
     
@@ -24,14 +25,6 @@ public:
     int size();
 };
 
-// 생성자. size 기본값 10
-template <typename T> 
-Stack<T>::Stack(int size){
-    _maxSize = size;
-    _stack = new T[_maxSize];
-    _top = -1;
-}
-
 // 스택이 꽉차있는지 여부를 확인
 template <typename T> 
 bool Stack<T>::_isFull(){
@@ -39,6 +32,28 @@ bool Stack<T>::_isFull(){
         return true;
     else
         return false;
+}
+
+// 사이즈 더블링
+template <typename T> 
+void Stack<T>::_sizeDoubling(){
+    T *newStack = new T[_maxSize * 2];
+    
+    for (int i = 0; i < _maxSize; i++)
+        newStack[i] = _stack[i];
+        
+    delete[] _stack;
+    
+    _stack = newStack;
+    _maxSize *= 2;
+}
+
+// 생성자. size 기본값 10
+template <typename T> 
+Stack<T>::Stack(int size){
+    _maxSize = size;
+    _stack = new T[_maxSize];
+    _top = -1;
 }
 
 // 스택이 비어있는지 여부를 확인
@@ -57,13 +72,7 @@ void Stack<T>::push(T value){
     
     // 스택이 모두 차면, size doubling 해준다.
     if (_isFull()){
-        T *newStack = new T[_maxSize * 2];
-        for (int i = 0; i < _maxSize; i++)
-            newStack[i] = _stack[i];
-        delete[] _stack;
-        _stack = newStack;
-        
-        _maxSize *= 2;
+        _sizeDoubling();
     }
     
     _stack[_top] = value;
