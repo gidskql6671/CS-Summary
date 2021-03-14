@@ -1,7 +1,7 @@
 // queue 구현. 설정된 size가 초과될 경우 size를 doubling 함
 #ifndef MY_ERROR // include guard
 #define MY_ERROR
-#include "Error.cpp"
+#include "../utils/Error.cpp"
 #endif
 
 // Circular Queue로 구현 

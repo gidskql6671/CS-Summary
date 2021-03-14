@@ -1,7 +1,7 @@
 /* Linked List 구현 */
 #ifndef MY_ERROR // include guard
 #define MY_ERROR
-#include "Error.cpp"
+#include "../utils/Error.cpp"
 #endif
 
 // Linked List의 노드
