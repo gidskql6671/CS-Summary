@@ -10,6 +10,8 @@ void insertionSort(T arr[], int n, bool (*compare)(T, T) = defaultCompare);
 template <typename T> 
 void selectionSort(T arr[], int n, bool (*compare)(T, T) = defaultCompare);
 
+template <typename T> 
+void bubbleSort(T arr[], int n, bool (*compare)(T, T) = defaultCompare);
 
 
 
@@ -20,6 +22,7 @@ bool defaultCompare(T a, T b){
 }
 
 // Insertion Sort의 구현
+// 배열의 값을 하나씩 insert하면서 정렬하는 방식
 // T arr[] : 정렬할 1차원 배열
 // int n : 배열 안 원소의 개수
 // bool (*compare)(T, T) : 원소를 비교해주는 비교 함수 
@@ -40,22 +43,49 @@ void insertionSort(T arr[], int n, bool (*compare)(T, T)){
 }
 
 // Selection Sort의 구현
+// 배열의 각 인덱스에 넣을 원소를 select하며 정렬하는 방식
 // T arr[] : 정렬할 1차원 배열
 // int n : 배열 안 원소의 개수
 // bool (*compare)(T, T) : 원소를 비교해주는 비교 함수 
 template <typename T> 
 void selectionSort(T arr[], int n, bool (*compare)(T, T)){
+    // 0번째 index에 들어갈 값부터 select를 한다.
     for(int i = 0; i < n; i++){
-        int minIdx = i;
+        // i번째 index에 들어갈 값을 select한다.
         
+        int target = i; // i번째 인덱스를 우선 select함.
+        
+        // compare를 통해 i번째 인덱스에 들어갈 적절한 값을 찾음.
         for(int j = i + 1; j < n; j++)
-            if (compare(arr[j], arr[minIdx]))
-                minIdx = j;
+            if (compare(arr[j], arr[target]))
+                target = j;
         
-        if (i != minIdx){
+        // 선택된 값이 i번째 인덱스에 있지 않다면 이동해준다.
+        if (i != target){
             T tmp = arr[i];
-            arr[i] = arr[minIdx];
-            arr[minIdx] = tmp;
+            arr[i] = arr[target];
+            arr[target] = tmp;
         }
     }
 }
+
+// Bubble Sort의 구현
+// 서로 인접한 두 원소를 검사해가며 정렬하는 방식
+// T arr[] : 정렬할 1차원 배열
+// int n : 배열 안 원소의 개수
+// bool (*compare)(T, T) : 원소를 비교해주는 비교 함수 
+template <typename T> 
+void bubbleSort(T arr[], int n, bool (*compare)(T, T)){
+    // 뒤에서부터 원소를 정렬할거다.
+    for(int i = n - 1; i > 0; i--){
+        for(int j = 0; j < i; j++){
+            // 인접한 두 원소를 비교해가며, 정렬되어있지 않다면 뒤로 민다.
+            if (compare(arr[j + 1], arr[j])){
+                T tmp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = tmp;
+            }
+        }
+    }
+}
+
