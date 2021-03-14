@@ -34,11 +34,11 @@ void insertionSort(T arr[], int n, bool (*compare)(T, T)){
         int j;
         
         // arr[0:i]는 정렬되어있는 상태임. 즉 i-1부터 역순으로 조사하며
-        // key보다 작은 값을 가지는 원소 뒤에 key값을 넣어 줌.
+        // key가 들어갈 위치를 찾아 줌.
         for(j = i - 1; j >= 0 && compare(key, arr[j]); j--)
             arr[j+1] = arr[j];
         
-        arr[j+1] = key; // key보다 작은 값을 가지는 원소 뒤에 key를 넣어줌.
+        arr[j+1] = key; // 해당 위치에 key를 넣어줌.
     }
 }
 
@@ -49,13 +49,13 @@ void insertionSort(T arr[], int n, bool (*compare)(T, T)){
 // bool (*compare)(T, T) : 원소를 비교해주는 비교 함수 
 template <typename T> 
 void selectionSort(T arr[], int n, bool (*compare)(T, T)){
-    // 0번째 index에 들어갈 값부터 select를 한다.
+    // 0번째 index부터 (n - 1)번째 index까지, 해당 위치에 들어갈 원소를 select한다.
     for(int i = 0; i < n; i++){
         // i번째 index에 들어갈 값을 select한다.
         
-        int target = i; // i번째 인덱스를 우선 select함.
         
         // compare를 통해 i번째 인덱스에 들어갈 적절한 값을 찾음.
+        int target = i;
         for(int j = i + 1; j < n; j++)
             if (compare(arr[j], arr[target]))
                 target = j;
