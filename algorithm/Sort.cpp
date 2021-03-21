@@ -17,6 +17,9 @@ void bubbleSort(T arr[], int n, bool (*compare)(T, T) = defaultCompare);
 template<typename T>
 void quickSort(T arr[], int left, int right, bool (*compare)(T, T) = defaultCompare);
 
+template<typename T>
+void mergeSort(T arr[], int left, int right, bool (*compare)(T, T) = defaultCompare);
+
 
 // 기본 비교 함수
 template <typename T>
@@ -139,4 +142,22 @@ void quickSort(T arr[], int left, int right, bool (*compare)(T, T)){
         quickSort(arr, left, high - 1);
         quickSort(arr, high + 1, right);
     }
+}
+
+// Merge Sort에서 분할된 부분 문제를 합병하는 과정
+template<typename T>
+void merge(T arr[], int left, int mid, int right, bool (*compare)(T, T)){
+    
+}
+
+// Merge Sort의 구현
+// 분할 정복(Divide and Conquer) 방법으로 정렬을 수행한다.
+// 문제를 2개 이상의 부분 문제로 분할하고, 각각을 해결한 뒤 결과를 모아 합병하는 방식이다.
+// T arr[] : 정렬할 1차원 배열
+// int left : 정렬할 배열의 첫번째 인덱스
+// int right : 정렬할 배열의 마지막 인덱스
+// bool (*compare)(T, T) : 원소를 비교해주는 비교 함수
+template<typename T>
+void mergeSort(T arr[], int left, int right, bool (*compare)(T, T)){
+    
 }
