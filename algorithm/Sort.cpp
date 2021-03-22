@@ -115,14 +115,12 @@ void quickSort(T arr[], int left, int right, bool (*compare)(T, T)){
         
         
         do{
-            // low가 배열의 범위를 벗어나거나
-            // arr[low]가 arr[pivot]보다 크거나 같은 경우 탈출.
+            // low가 배열의 범위를 벗어나거나, arr[low]가 arr[pivot]보다 크거나 같은 경우 탈출.
             do {
                 low++;
             } while(low <= right && arr[low] < arr[pivot]);
             
-            // high가 배열의 범위를 벗어나거나
-            // arr[high]가 arr[pivot]보다 작거나 같은 경우 탈출.
+            // high가 배열의 범위를 벗어나거나, arr[high]가 arr[pivot]보다 작거나 같은 경우 탈출.
             do {
                 high--;
             } while(high >= left && arr[high] > arr[pivot]);
@@ -138,7 +136,7 @@ void quickSort(T arr[], int left, int right, bool (*compare)(T, T)){
         // pivot 값을 기준으로 왼쪽에 작은 값들을 오른쪽에 큰값들을 몰기위한 SWAP
         SWAP(arr[pivot], arr[high], tmp);
         
-        // pivot을 기준으로 왼쪽에는 작은 값들, 오른쪽에는 큰 값들이 위치하도록 정렬됨.
+        // pivot을 기준으로 왼쪽에는 작은 값들, 오른쪽에는 큰 값들이 위치시킴.
         // 이 두 배열에 대해서도 정렬을 시작함.
         quickSort(arr, left, high - 1);
         quickSort(arr, high + 1, right);
