@@ -95,8 +95,9 @@ void bubbleSort(T arr[], int n, bool (*compare)(T, T)){
 
 // Quick Sort의 구현
 // 오름차순 정렬을 기준으로 설명
-// 1. pivot을 기준으로 2개의 부분 배열로 분할한다.
-// 2. pivot보다 작은 값은 왼쪽으로, pivot보다 큰 값을 오른쪽으로 옮긴다.
+// 1. pivot을 기준으로 pivot보다 작은 원소는 왼쪽으로, pivot보다 큰 원소는 오른쪽으로 옮긴다.
+// 2. pivot을 제외한 왼쪽 부분 리스트와 오른쪽 부분 리스트에도 위 과정을 반복한다.
+// 3. 부분 리스트의 크기가 0 또는 1이 될 경우 종료한다.
 // T arr[] : 정렬할 1차원 배열
 // int left : 정렬할 배열의 첫번째 인덱스
 // int right : 정렬할 배열의 마지막 인덱스
@@ -144,10 +145,42 @@ void quickSort(T arr[], int left, int right, bool (*compare)(T, T)){
     }
 }
 
-// Merge Sort에서 분할된 부분 문제를 합병하는 과정
+// Merge Sort에서 분할된 부분 배열을 합병하는 과정
+// Merge Sort에서 첫번째 인덱스가 left, 마지막 인덱스가 right인 한 배열을 mid를 기준으로 두 개로 쪼개었다.
+// 이 쪼개진 두 배열을 합병하는 것이며, 합병 과정에서 정렬이 이루어진다.
+// T arr[] : 정렬할 1차원 배열
+// int left : 합병할 두 배열 중 왼쪽 배열의 첫번째 인덱스
+// int mid : 합병할 두 배열의 중간 인덱스 -> 왼쪽 배열의 마지막 인덱스 + 1이면서 오른쪽 배열의 첫번째 인덱스이다.
+// int right : 합병할 두 배열 중 오른쪽 배열의 마지막 인덱스
+// bool (*compare)(T, T) : 원소를 비교해주는 비교 함수
 template<typename T>
 void merge(T arr[], int left, int mid, int right, bool (*compare)(T, T)){
+    int i = left;
+    int j = mid + 1;
+    int cur = 0;
     
+    T *tmp = new T[right - left + 1]; // merge sort는 추가 메모리가 필요함.
+    
+    // 분할된 부분 배열을 각각 탐색하면서 더 작은 값을 먼저 임시 배열에 넣어준다.
+    while(i <= mid && j <= right){
+        if (arr[i] <= arr[j])
+            tmp[cur++] = arr[i++];
+        else
+            tmp[cur++] = arr[j++];
+    }
+    
+    // 만약 왼쪽 부분이 남아있다면, 그 값들을 임시 배열에 넣어줌
+    while(i <= mid){
+        tmp[cur++] = arr[i++];
+    }
+    // 만약 오른쪽 부분이 남아있는 경우는 원래 배열(arr)에 정렬된 상태로 저장되어있기 때문에 옮길 필요가 없다.
+    
+    // 임시 배열에 있는 정렬된 값을 원래 배열에 넣어준다.
+    for(int idx = 0; idx < cur; idx++){
+        arr[left + idx] = tmp[idx];
+    }
+    
+    delete[] tmp;
 }
 
 // Merge Sort의 구현
@@ -159,5 +192,14 @@ void merge(T arr[], int left, int mid, int right, bool (*compare)(T, T)){
 // bool (*compare)(T, T) : 원소를 비교해주는 비교 함수
 template<typename T>
 void mergeSort(T arr[], int left, int right, bool (*compare)(T, T)){
-    
+    if (left < right){
+        int mid = (left + right) / 2;
+        
+        // 리스트를 중간을 기준으로 두개로 분할함
+        mergeSort(arr, left, mid, compare);
+        mergeSort(arr, mid + 1, right, compare);
+        
+        // 분할한 리스트를 합병하며 정렬함.
+        merge(arr, left, mid, right, compare);
+    }
 }
