@@ -91,20 +91,24 @@ ll bino_coef_ferma(int n, int r){
     ll MOD = 1000000007LL;
     ll A = 1, B = 1; // A = n!, B = k!(n-k)!
     
+    // n! 구하기
     for(ll i = 1; i <= n; i++){
         A *= i;
         A %= MOD;
     }
     
+    // k! 구하기
     for(ll i = 1; i <= r; i++){
         B *= i;
         B %= MOD;
     }
+    // k!(n-k)! 구하기
     for(ll i = 1; i <= n - r; i++){
         B *= i;
         B %= MOD;
     }
     
+    // B^(MOD-2)를 구함. 2진수 표현을 통해 O(logN)의 시간복잡도로 구함.
     ll B2 = 1;
     int exponent = MOD - 2;
     while(exponent){
@@ -118,6 +122,7 @@ ll bino_coef_ferma(int n, int r){
         exponent /= 2;
     }
     
+    // 결과를 구함.
     ll result = A * B2;
     result %= MOD;
     
