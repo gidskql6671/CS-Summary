@@ -83,3 +83,43 @@ ll bino_coef_dp2(int n, int r){
     
     return result;
 }
+
+
+// 페르마의 소정리를 이용한 이항 계수 구하기.
+// 모듈러 연산을 취하는 것이 전제되어있다.
+ll bino_coef_ferma(int n, int r){
+    ll MOD = 1000000007LL;
+    ll A = 1, B = 1; // A = n!, B = k!(n-k)!
+    
+    for(ll i = 1; i <= n; i++){
+        A *= i;
+        A %= MOD;
+    }
+    
+    for(ll i = 1; i <= r; i++){
+        B *= i;
+        B %= MOD;
+    }
+    for(ll i = 1; i <= n - r; i++){
+        B *= i;
+        B %= MOD;
+    }
+    
+    ll B2 = 1;
+    int exponent = MOD - 2;
+    while(exponent){
+        if (exponent % 2){
+            B2 *= B;
+            B2 %= MOD;
+        }
+        
+        B *= B;
+        B %= MOD;
+        exponent /= 2;
+    }
+    
+    ll result = A * B2;
+    result %= MOD;
+    
+    return result;
+}
