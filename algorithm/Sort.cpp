@@ -20,6 +20,8 @@ void quickSort(T arr[], int left, int right, bool (*compare)(T, T) = defaultComp
 template<typename T>
 void mergeSort(T arr[], int left, int right, bool (*compare)(T, T) = defaultCompare);
 
+template<typename T>
+void heapSort(T arr[], int n, bool (*compare)(T, T) = defaultCompare);
 
 // 기본 비교 함수
 template <typename T>
@@ -200,4 +202,92 @@ void mergeSort(T arr[], int left, int right, bool (*compare)(T, T)){
         // 분할한 리스트를 합병하며 정렬함.
         merge(arr, left, mid, right, compare);
     }
+}
+
+// Insertion in Heap
+// heap에 value를 넣어줌.
+// T heap[] : heap
+// T value : heap에 넣을 값
+// bool (*compare)(T, T) : 원소를 비교해주는 비교 함수
+template<typename T>
+void insert_heap(T heap[], T value, bool (*compare)(T, T)){
+    // heap의 가장 마지막에 원소를 넣음.
+    int cur = ++(heap[0]);
+    
+    // 부모 노드랑 비교하면서 cur가 더 위에 있어야하면 위치를 바꿔줌.
+    while((cur != 1) && compare(value, heap[cur / 2])){
+        heap[cur] = heap[cur / 2];
+        
+        cur /= 2;
+    }
+    
+    // 새로운 노드를 올바른 위치에 삽입함.
+    heap[cur] = value;
+}
+
+// Deletion in Heap
+// heap에서 우선순위가 큰 값을 삭제 및 반환해줌.
+// T heap[] : heap
+// bool (*compare)(T, T) : 원소를 비교해주는 비교 함수
+template<typename T>
+T delete_heap(T heap[], bool (*compare)(T, T)){
+    int parent, child;
+    T item, last;
+    
+    item = heap[1]; // 루트 노드 값을 반환.
+    
+    // heap의 마지막 값을 루트 노드 위치부터 비교해가며 삽입하기 적절한 위치를 찾을 것임.
+    last = heap[(heap[0])--]; 
+    parent = 1;
+    child = 2;
+    
+    // child가 heap의 크기를 초과하면 탈출
+    while(child <= heap[0]){
+        // 오른쪽 자식이 왼쪽 자식보다 우선순위가 크면, 오른쪽 자식을 대상으로 진행
+        if ((child < heap[0]) && compare(heap[child + 1], heap[child])){
+            child++;
+        }
+        
+        // 만약 마지막 노드가 자식 노드보다 우선순위가 크거나 같다면, break
+        if (!compare(heap[child], last)){
+            break;
+        }
+        
+        heap[parent] = heap[child];
+        
+        parent = child;
+        child *= 2;
+    }
+    
+    heap[parent] = last;
+    
+    return item;
+}
+
+// Heap Sort의 구현
+// Heap을 이용한 정렬
+// 배열의 원소 n개를 heap에 넣은 뒤, 하나씩 빼면서 정렬함
+// T arr[] : 정렬할 1차원 배열
+// int n : 배열 안 원소의 개수
+// bool (*compare)(T, T) : 원소를 비교해주는 비교 함수
+template<typename T>
+void heapSort(T arr[], int n, bool (*compare)(T, T)){
+    // 배열로 만든 heap은 인덱스 1부터 값이 들어감. 그렇기 때문에, 크기를 n + 1로 해줌.
+    T *heap = new T[n + 1];
+    
+    // heap 초기화. 원소의 개수를 0으로 설정
+    heap[0] = 0;
+    
+    // n개의 원소를 heap에 넣어줌.
+    for(int i = 0; i < n; i++){
+        insert_heap(heap, arr[i], compare);
+    }
+    
+    // n개의 원소를 차례차례 빼주면서 배열에 넣어줌.
+    for(int i = 0; i < n; i++){
+        arr[i] = delete_heap(heap, compare);
+    }
+    
+    // heap에 할당된 메모리 해제.
+    delete[] heap;
 }
