@@ -48,7 +48,7 @@ ll bino_coef_dp(int n, int r){
 ll choose(int n, int r, ll **dp, int times, int got){
     // n번 선택했으면 재귀함수를 탈출한다.
     if (times == n)
-        return got == r; // 선택한 원소의 개수가 r개면 true(1), r개가 아니면 false(0)을 반환한다.
+        return got == r; // 뽑은 원소의 개수가 r개면 true(1), r개가 아니면 false(0)을 반환한다.
     
     // 해당 부분 문제가 이미 계산되어 있으면, 바로 반환한다.
     if (dp[times][got] != -1)
