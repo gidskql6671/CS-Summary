@@ -214,14 +214,14 @@ void insert_heap(T heap[], T value, bool (*compare)(T, T)){
     // heap의 가장 마지막에 원소를 넣음.
     int cur = ++(heap[0]);
     
-    // 부모 노드랑 비교하면서 cur의 우선순위가 높다면 위치를 바꿔줌.
+    // 삽입할 원소와 부모 노드를 비교하면서 삽입할 원소의 우선순위가 높다면 위치를 바꿔줌.
     while((cur != 1) && compare(value, heap[cur / 2])){
         heap[cur] = heap[cur / 2];
         
         cur /= 2;
     }
     
-    // 새로운 노드를 올바른 위치에 삽입함.
+    // 새로운 노드를 적절한 위치에 삽입함.
     heap[cur] = value;
 }
 
