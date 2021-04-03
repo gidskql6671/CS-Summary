@@ -1,5 +1,8 @@
 /* Sorting Algorithm을 구현 */
 #define SWAP(x, y, tmp) ( (tmp) = (x), (x)=(y), (y)=(tmp) )
+#include <iostream>
+
+using namespace std;
 
 template <typename T>
 bool defaultCompare(T a, T b);
@@ -22,6 +25,54 @@ void mergeSort(T arr[], int left, int right, bool (*compare)(T, T) = defaultComp
 
 template<typename T>
 void heapSort(T arr[], int n, bool (*compare)(T, T) = defaultCompare);
+
+// 내림차순 정렬
+bool compareReverse(int a, int b){
+    return a > b;
+}
+
+
+int main(){
+    int n;
+    
+    cout << "원소의 개수를 입력 : ";
+    cin >> n;
+    
+    int *arr = new int[n];
+    for(int i = 0; i < n; i++){
+        cout << i + 1 << "번째 원소 : ";
+        cin >> arr[i];
+    }
+    
+    cout << "정렬 전 배열 : ";
+    for(int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+    cout << "\n";
+    
+    /* 오름차순 정렬 */
+    insertionSort(arr, n);
+    // selectionSort(arr, n);
+    // bubbleSort(arr, n);
+    // quickSort(arr, 0, n - 1);
+    // mergeSort(arr, 0, n - 1);
+    // heapSort(arr, n);
+    
+    /* 내림차순 정렬 */
+    // insertionSort(arr, n, compareReverse);
+    
+    cout << "정렬 후 배열 : ";
+    for(int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+    cout << "\n";
+    
+    
+    delete[] arr;
+    
+    return 0;
+}
+
+
+
 
 // 기본 비교 함수
 template <typename T>

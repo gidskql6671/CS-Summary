@@ -1,6 +1,9 @@
 ### algorithm/
 Algorithm들을 구현해둔 디렉토리
 
+각 파일들은 자체적으로 main문과 input 구문들을 가지고 있음.
+가능하다면 백준 문제를 바탕으로 구현을 할 것임. 
+
 
 ## 프로젝트 구조
 + Sort.cpp
@@ -26,7 +29,7 @@ Insertion Sort, Selection Sort, Bubble Sort, Quick Sort, Merge Sort, Heap Sort가
 ### knapsack.cpp
 무게 제한이 있는 배낭에 물건들을 넣을 때, 배낭에 넣을 수 있는 물건들의 가치의 최대값을 구하는 알고리즘
 각각의 물건을  여러개로 쪼갤 수 없는 0-1 Knapsack이며, 각각의 물건은 한개씩만 존재함.
-코드 내부에 main문이 존재하며, input처리 역시 코드내에 존재함.
+[평범한 배낭](https://www.acmicpc.net/problem/12865)
 
 ### floyd-warshall.cpp
 모든 노드에서 모든 노드로의 최단 경로를 구하는 플로이드 와샬 알고리즘을 구현함.
