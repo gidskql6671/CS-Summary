@@ -9,7 +9,7 @@ using namespace std;
 
 
 vector<vector<int>> floydWarshall(vector<vector<int>> dist, int n);
-int solve(vector<vector<int>> dist, int n);
+void solve(vector<vector<int>> dist, int n);
 
 
 int main(){
@@ -33,7 +33,7 @@ int main(){
     
     vector<vector<int>> minDist = floydWarshall(dist, n);
     
-    cout << solve(minDist, n) << endl;
+    solve(minDist, n);
     
     return 0;
 }
@@ -65,7 +65,7 @@ vector<vector<int>> floydWarshall(vector<vector<int>> dist, int n){
 
 
 // 백준 문제를 풀기위한 함수
-int solve(vector<vector<int>> dist, int n){
+voist solve(vector<vector<int>> dist, int n){
     int result = INF;
     
     for(int i = 0; i < n; i++){
@@ -80,7 +80,5 @@ int solve(vector<vector<int>> dist, int n){
         }
     }
     
-    if (result == INF)
-        return -1;
-    return result;
+    cout << (result == INF ? -1 : result) << endl;
 }
