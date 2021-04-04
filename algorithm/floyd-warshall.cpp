@@ -65,7 +65,7 @@ vector<vector<int>> floydWarshall(vector<vector<int>> dist, int n){
 
 
 // 백준 문제를 풀기위한 함수
-voist solve(vector<vector<int>> dist, int n){
+void solve(vector<vector<int>> dist, int n){
     int result = INF;
     
     for(int i = 0; i < n; i++){
@@ -80,5 +80,5 @@ voist solve(vector<vector<int>> dist, int n){
         }
     }
     
-    cout << (result == INF ? -1 : result) << endl;
+    cout << (result == INF ? -1 : result) << "\n";
 }
