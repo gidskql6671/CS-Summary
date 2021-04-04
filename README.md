@@ -12,12 +12,13 @@
 + utils/
     + Error.cpp
 
+***
 
 ### ds/
-Data Structure들을 구현해둔 디렉토리
+Data Structure들을 구현해둔 디렉토리  
 
 ### algorithm/
-Algorithm들을 구현해둔 디렉토리
+Algorithm들을 구현해둔 디렉토리  
 
 ### utils/
-공용으로 사용되는 기능을 구현해둔 디렉토리
+공용으로 사용되는 기능을 구현해둔 디렉토리  
