@@ -1,8 +1,3 @@
-#include <vector>
-#include <algorithm>
-
-using namespace std;
-
 /*
 매우 큰 수의 곱셈을 빠르게 처리하기 위한 Karatsuba Algorithm
 
@@ -27,6 +22,43 @@ z1 = (a0 + a1) * (b0 + b1) - z0 - z2
 
 위처럼 곱셈 횟수를 줄임으로써 시간복잡도를 O(n^log3)으로 줄일 수 있다.
 */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+
+
+void nomalize(vector<int> &num);
+vector<int> multiply(const vector<int> &a, const vector<int> &b);
+void addTo(vector<int> &a, const vector<int> &b, int k);
+void subFrom(vector<int> &a, const vector<int> &b);
+vector<int> karatsuba(const vector<int> &a, const vector<int> &b);
+
+
+int main(){
+    vector<int> a, b;
+    string str;
+    
+    cin >> str;
+    for(int i = str.length() - 1; i >= 0 ; i--)
+        a.push_back(str[i] - '0');
+    
+    cin >> str;
+    for(int i = str.length() - 1; i >= 0 ; i--)
+        b.push_back(str[i] - '0');
+    
+    vector<int> c = karatsuba(a, b);
+    
+    for(int i = c.size() - 1; i >= 0; i--)
+        cout << c[i];
+    cout << endl;
+    
+    return 0;
+}
+
 
 
 // num의 자릿수 올림을 처리한다.

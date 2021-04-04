@@ -21,6 +21,7 @@ Insertion Sort, Selection Sort, Bubble Sort, Quick Sort, Merge Sort, Heap Sort가
 
 ### bino_coef.cpp
 이항 계수(binomial coefficient)을 구현함.
+[이항 계수 3](https://www.acmicpc.net/problem/11401)
 
 ### karatsuba.cpp
 큰 수의 곱셈을 처리하는 알고리즘인 Karatsuba Algorithm을 구현함.
@@ -33,6 +34,7 @@ Insertion Sort, Selection Sort, Bubble Sort, Quick Sort, Merge Sort, Heap Sort가
 
 ### floyd-warshall.cpp
 모든 노드에서 모든 노드로의 최단 경로를 구하는 플로이드 와샬 알고리즘을 구현함.
+[운동](https://www.acmicpc.net/problem/1956)
 
 ### bellman-ford.cpp
 한 노드에서 다른 모든 노드로의 최단 경로를 구하는 벨만 포드 알고리즘을 구현함.

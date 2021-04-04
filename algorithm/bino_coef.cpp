@@ -1,22 +1,25 @@
 /* 이항계수(binomial coefficient)을 구현함 */
+#include <iostream>
 typedef long long ll;
+
+using namespace std;
+
 
 ll bino_coef_dp(int n, int r);
 ll bino_coef_dp2(int n, int r);
 ll bino_coef_ferma(int n, int r);
 
-long long bino_coef(int n, int r){
-    // r이 n보다 큰 경우의 수는 0이다.
-    if (r > n)
-        return 0;
-   
-    // n개에서 0개를 선택하는 경우의 수와 n개에서 r개를 선택하는 경우의 수는 1이다.
-    if (r == 0 || r == n)
-        return 1;
+
+int main(){
+    int n, r;
     
-    // nCr = n-1Cr + n-1Cr-1
-    return bino_coef(n - 1, r - 1) + bino_coef(n - 1, r);
+    cin >> n >> r;
+    
+    cout << bino_coef_ferma(n, r) << endl;
+    
+    return 0;
 }
+
 
 // Dynamic Programing을 이용한 이항 계수 구하기.
 // 이항 계수의 방정식 중 하나인 nCr = n-1Cr + n-1Cr-1을 이용한 구현
