@@ -3,22 +3,6 @@
 
 
 ## 프로젝트 구조
-+ ds/
-    + Stack.cpp
-    + Queue.cpp
-    + LinkedList.cpp
-+ algorithm/
-    + Sort.cpp
-+ utils/
-    + Error.cpp
-
-***
-
-### ds/
-Data Structure들을 구현해둔 디렉토리  
-
-### algorithm/
-Algorithm들을 구현해둔 디렉토리  
-
-### utils/
-공용으로 사용되는 기능을 구현해둔 디렉토리  
++ [자료구조 (data_structure)](./data_structure)
++ [알고리즘 (algorithm)](./algorithm)
++ [잡다한 것들 (utils)](./utils)
