@@ -1,4 +1,4 @@
 
 ### sort.cpp
-Sorting Algorithmì„ êµ¬í˜„í•¨.  
-Insertion Sort, Selection Sort, Bubble Sort, Quick Sort, Merge Sort, Heap Sortê°€ êµ¬í˜„ë˜ì–´ ìˆìŒ.
+Sorting AlgorithmÀ» ±¸ÇöÇÔ.  
+Insertion Sort, Selection Sort, Bubble Sort, Quick Sort, Merge Sort, Heap Sort°¡ ±¸ÇöµÇ¾î ÀÖÀ½.

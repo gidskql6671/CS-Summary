@@ -1,53 +1,53 @@
 ### Algorithm
 
-## ëª©ë¡
-ê° í´ë”ì— Algorithmë“¤ì„ C++ë¡œ êµ¬í˜„í•˜ì˜€ìŒ.
-+ [ì •ë ¬ ì½”ë“œ](./Sort)
-+ [ì´í•­ ê³„ìˆ˜(Binomial Coefficient)](./ì´í•­ê³„ìˆ˜)
-+ [ìµœë‹¨ê±°ë¦¬](./ìµœë‹¨ê±°ë¦¬)
-+ [ê¸°íƒ€](./etc)
+## ¸ñ·Ï
+°¢ Æú´õ¿¡ AlgorithmµéÀ» C++·Î ±¸ÇöÇÏ¿´À½.
++ [Á¤·Ä ÄÚµå](./Sort)
++ [ÀÌÇ× °è¼ö(Binomial Coefficient)](./ÀÌÇ×°è¼ö)
++ [ÃÖ´Ü°Å¸®](./ÃÖ´Ü°Å¸®)
++ [±âÅ¸](./etc)
 
-## ì´ë¡ 
-### ìžì„¸í•œ ì„¤ëª…ì€ ë¸”ë¡œê·¸ì— ì •ë¦¬í•´ë†¨ë‹¤.
+## ÀÌ·Ð
+### ÀÚ¼¼ÇÑ ¼³¸íÀº ºí·Î±×¿¡ Á¤¸®ÇØ³ù´Ù.
 [Sorting Algorithm - Insertion Sort, Selection Sort, Bubble Sort](https://velog.io/@gidskql6671/Sorting-Algorithm-Insertion-Sort)
 [Sorting Algorithm - Quick Sort, Merge Sort, Heap Sort](https://velog.io/@gidskql6671/Sorting-Algorithm-Quick-Sort-Merge-Sort-Heap-Sort)
 
-### ðŸ’¡ ì •ë ¬
-ì •ë ¬ì„ í•˜ëŠ” ê°€ìž¥ í° ì´ìœ ëŠ” **íƒìƒ‰**ì„ ìœ„í•´ì„œ. ë°ì´í„°ê°€ ì •ë ¬ë˜ì–´ ìžˆë‹¤ë©´, ì´ì§„ íƒìƒ‰ì´ë¼ëŠ” ê°•ë ¥í•œ ì•Œê³ ë¦¬ì¦˜ì„ ì‚¬ìš©í•  ìˆ˜ ìžˆë‹¤.
+### ? Á¤·Ä
+Á¤·ÄÀ» ÇÏ´Â °¡Àå Å« ÀÌÀ¯´Â **Å½»ö**À» À§ÇØ¼­. µ¥ÀÌÅÍ°¡ Á¤·ÄµÇ¾î ÀÖ´Ù¸é, ÀÌÁø Å½»öÀÌ¶ó´Â °­·ÂÇÑ ¾Ë°í¸®ÁòÀ» »ç¿ëÇÒ ¼ö ÀÖ´Ù.
 
 + **Insertion Sort**
-    + ê¸°ì¡´ì˜ ì •ë ¬ëœ ë°°ì—´ì— ìƒˆë¡œìš´ ì›ì†Œë¥¼ Insertí•˜ë©´ì„œ ì •ë ¬í•œë‹¤.
-    + ìƒˆë¡œìš´ ì›ì†Œê°€ ë“¤ì–´ê°ˆ ìœ„ì¹˜ë¥¼ ì°¨ë¡€ë¡œ íƒìƒ‰í•˜ë©°, ì ì ˆí•œ ìœ„ì¹˜ë¥¼ ì°¾ìœ¼ë©´ Insertí•œë‹¤.
-    + ì‹œê°„ë³µìž¡ë„ëŠ” í‰ê· ì ìœ¼ë¡œ O(n<sup>2</sup>)ì´ë‹¤.
-        + íƒìƒ‰ì„ ì—­ìˆœìœ¼ë¡œ í•  ë•Œ ìž…ë ¥ìžë£Œê°€ ì´ë¯¸ ì •ë ¬ì´ ë˜ì–´ìžˆëŠ” ê²½ìš°, ë§¤ë²ˆ ë‹¨ í•œë²ˆì˜ ë¹„êµë§Œ ìˆ˜í–‰í•œë‹¤. ì¦‰, ì‹œê°„ë³µìž¡ë„ê°€ O(n)ì´ ëœë‹¤.
-    + ì•Œê³ ë¦¬ì¦˜ì´ ë§¤ìš° ê°„ê²°í•˜ê¸° ë•Œë¬¸ì—, ë°ì´í„°ê°€ ì ì„ ê²½ìš° ë‹¤ë¥¸ ì•Œê³ ë¦¬ì¦˜ë³´ë‹¤ ë” ë¹ ë¥´ê²Œ ìˆ˜í–‰ë˜ëŠ” ê²½ìš°ê°€ ìžˆë‹¤.
-    + Stable Sortì— ì†í•˜ë©°, ì´ëŠ” ê°™ì€ ê°’ì„ ê°€ì§„ ì›ì†Œë“¤ì˜ ìˆœì„œê°€ ì •ë ¬ í›„ì—ë„ ë³€ê²½ë˜ì§€ ì•ŠëŠ” ê²ƒì„ ì˜ë¯¸í•œë‹¤.
+    + ±âÁ¸ÀÇ Á¤·ÄµÈ ¹è¿­¿¡ »õ·Î¿î ¿ø¼Ò¸¦ InsertÇÏ¸é¼­ Á¤·ÄÇÑ´Ù.
+    + »õ·Î¿î ¿ø¼Ò°¡ µé¾î°¥ À§Ä¡¸¦ Â÷·Ê·Î Å½»öÇÏ¸ç, ÀûÀýÇÑ À§Ä¡¸¦ Ã£À¸¸é InsertÇÑ´Ù.
+    + ½Ã°£º¹Àâµµ´Â Æò±ÕÀûÀ¸·Î O(n<sup>2</sup>)ÀÌ´Ù.
+        + Å½»öÀ» ¿ª¼øÀ¸·Î ÇÒ ¶§ ÀÔ·ÂÀÚ·á°¡ ÀÌ¹Ì Á¤·ÄÀÌ µÇ¾îÀÖ´Â °æ¿ì, ¸Å¹ø ´Ü ÇÑ¹øÀÇ ºñ±³¸¸ ¼öÇàÇÑ´Ù. Áï, ½Ã°£º¹Àâµµ°¡ O(n)ÀÌ µÈ´Ù.
+    + ¾Ë°í¸®ÁòÀÌ ¸Å¿ì °£°áÇÏ±â ¶§¹®¿¡, µ¥ÀÌÅÍ°¡ ÀûÀ» °æ¿ì ´Ù¸¥ ¾Ë°í¸®Áòº¸´Ù ´õ ºü¸£°Ô ¼öÇàµÇ´Â °æ¿ì°¡ ÀÖ´Ù.
+    + Stable Sort¿¡ ¼ÓÇÏ¸ç, ÀÌ´Â °°Àº °ªÀ» °¡Áø ¿ø¼ÒµéÀÇ ¼ø¼­°¡ Á¤·Ä ÈÄ¿¡µµ º¯°æµÇÁö ¾Ê´Â °ÍÀ» ÀÇ¹ÌÇÑ´Ù.
 + **Selection Sort**
-    + íŠ¹ì • ìœ„ì¹˜ì— ë“¤ì–´ê°ˆ ì›ì†Œë¥¼ ì„ íƒí•˜ë©° ì •ë ¬í•˜ëŠ” ì•Œê³ ë¦¬ì¦˜ì´ë‹¤.
-    + í•´ë‹¹ ìˆœì„œì— ì›ì†Œë¥¼ ë„£ì„ ìœ„ì¹˜ëŠ” ì´ë¯¸ ì •í•´ì ¸ìžˆê³ , í•´ë‹¹ ìœ„ì¹˜ì— ë„£ì„ ì›ì†Œë¥¼ ì°¾ëŠ”ë‹¤.
-    + ë°ì´í„° ë¶„í¬ì— ê´€ê³„ì—†ì´ ë™ì¼í•œ ë°˜ë³µíšŸìˆ˜ë¥¼ ê°€ì§„ë‹¤. ì‹œê°„ ë³µìž¡ë„ëŠ” O(n<sup>2</sup>)ì´ë‹¤.
-    + Unstable Sortì— ì†í•˜ë©°, ì´ëŠ” ê°™ì€ ê°’ì„ ê°€ì§„ ì›ì†Œë“¤ì˜ ìˆœì„œê°€ ì •ë ¬ í›„ì—ë„ ë™ì¼í•˜ë‹¤ëŠ” ê²ƒì„ ë³´ìž¥í•  ìˆ˜ ì—†ë‹¤ëŠ” ê²ƒì„ ì˜ë¯¸í•œë‹¤.
+    + Æ¯Á¤ À§Ä¡¿¡ µé¾î°¥ ¿ø¼Ò¸¦ ¼±ÅÃÇÏ¸ç Á¤·ÄÇÏ´Â ¾Ë°í¸®ÁòÀÌ´Ù.
+    + ÇØ´ç ¼ø¼­¿¡ ¿ø¼Ò¸¦ ³ÖÀ» À§Ä¡´Â ÀÌ¹Ì Á¤ÇØÁ®ÀÖ°í, ÇØ´ç À§Ä¡¿¡ ³ÖÀ» ¿ø¼Ò¸¦ Ã£´Â´Ù.
+    + µ¥ÀÌÅÍ ºÐÆ÷¿¡ °ü°è¾øÀÌ µ¿ÀÏÇÑ ¹Ýº¹È½¼ö¸¦ °¡Áø´Ù. ½Ã°£ º¹Àâµµ´Â O(n<sup>2</sup>)ÀÌ´Ù.
+    + Unstable Sort¿¡ ¼ÓÇÏ¸ç, ÀÌ´Â °°Àº °ªÀ» °¡Áø ¿ø¼ÒµéÀÇ ¼ø¼­°¡ Á¤·Ä ÈÄ¿¡µµ µ¿ÀÏÇÏ´Ù´Â °ÍÀ» º¸ÀåÇÒ ¼ö ¾ø´Ù´Â °ÍÀ» ÀÇ¹ÌÇÑ´Ù.
 + **Bubble Sort**
-    + ì„œë¡œ ì¸ì ‘í•œ ë‘ ì›ì†Œë¥¼ ë¹„êµí•˜ë©° ì •ë ¬í•˜ëŠ” ì•Œê³ ë¦¬ì¦˜ì´ë‹¤.
-    + ì„œë¡œ ì¸ì ‘í•œ 2ê°œì˜ ì›ì†Œë¥¼ ë¹„êµí•˜ì—¬ ì •ë ¬ë˜ì–´ ìžˆì§€ì•Šë‹¤ë©´ ì„œë¡œ ìœ„ì¹˜ë¥¼ ë³€ê²½í•œë‹¤.
-    + ë°ì´í„° ë¶„í¬ì— ê´€ê³„ì—†ì´ ë™ì¼í•œ ë°˜ë³µíšŸìˆ˜ë¥¼ ê°€ì§„ë‹¤. ì‹œê°„ ë³µìž¡ë„ëŠ” O(n<sup>2</sup>)ì´ë‹¤.
+    + ¼­·Î ÀÎÁ¢ÇÑ µÎ ¿ø¼Ò¸¦ ºñ±³ÇÏ¸ç Á¤·ÄÇÏ´Â ¾Ë°í¸®ÁòÀÌ´Ù.
+    + ¼­·Î ÀÎÁ¢ÇÑ 2°³ÀÇ ¿ø¼Ò¸¦ ºñ±³ÇÏ¿© Á¤·ÄµÇ¾î ÀÖÁö¾Ê´Ù¸é ¼­·Î À§Ä¡¸¦ º¯°æÇÑ´Ù.
+    + µ¥ÀÌÅÍ ºÐÆ÷¿¡ °ü°è¾øÀÌ µ¿ÀÏÇÑ ¹Ýº¹È½¼ö¸¦ °¡Áø´Ù. ½Ã°£ º¹Àâµµ´Â O(n<sup>2</sup>)ÀÌ´Ù.
 + **Merge Sort**
-    + ë¶„í•  ì •ë³µ(Divide and Conquer) ì „ëžµì„ ì‚¬ìš©í•˜ëŠ” ëŒ€í‘œì ì¸ ì •ë ¬ ì•Œê³ ë¦¬ì¦˜ì´ë‹¤.
-    + ë¦¬ìŠ¤íŠ¸ì˜ í¬ê¸°ê°€ 1ì´í•˜ê°€ ë ë•Œê¹Œì§€ ì ˆë°˜ì”© ë‚˜ëˆˆ í›„, ë‚˜ëˆ ì§„ ë¦¬ìŠ¤íŠ¸ë“¤ì„ ë‹¤ì‹œ í•˜ë‚˜ì˜ ì •ë ¬ëœ ë¦¬ìŠ¤íŠ¸ë¡œ í•©ë³‘í•œë‹¤.
-        + í•©ë³‘ ê³¼ì •ì—ì„œ ìƒˆë¡œìš´ ë©”ëª¨ë¦¬ ê³µê°„ì„ í• ë‹¹ë°›ì•„ í•©ë³‘í•œë‹¤.
-    + ì‹œê°„ë³µìž¡ë„ëŠ” O(nlogn)ì´ë‹¤.
-    + In-place Algorithm(ì œìžë¦¬ ì•Œê³ ë¦¬ì¦˜)ì´ ì•„ë‹ˆë‹¤. O(n)ë§Œí¼ì˜ ìƒˆë¡œìš´ ê³µê°„ì´ ìš”êµ¬ë˜ë©°, í•´ë‹¹ ê³µê°„ìœ¼ë¡œ ì •ë ¬ëœ ë°°ì—´ì´ ìžë¦¬ìž¡ëŠ”ë‹¤.
+    + ºÐÇÒ Á¤º¹(Divide and Conquer) Àü·«À» »ç¿ëÇÏ´Â ´ëÇ¥ÀûÀÎ Á¤·Ä ¾Ë°í¸®ÁòÀÌ´Ù.
+    + ¸®½ºÆ®ÀÇ Å©±â°¡ 1ÀÌÇÏ°¡ µÉ¶§±îÁö Àý¹Ý¾¿ ³ª´« ÈÄ, ³ª´²Áø ¸®½ºÆ®µéÀ» ´Ù½Ã ÇÏ³ªÀÇ Á¤·ÄµÈ ¸®½ºÆ®·Î ÇÕº´ÇÑ´Ù.
+        + ÇÕº´ °úÁ¤¿¡¼­ »õ·Î¿î ¸Þ¸ð¸® °ø°£À» ÇÒ´ç¹Þ¾Æ ÇÕº´ÇÑ´Ù.
+    + ½Ã°£º¹Àâµµ´Â O(nlogn)ÀÌ´Ù.
+    + In-place Algorithm(Á¦ÀÚ¸® ¾Ë°í¸®Áò)ÀÌ ¾Æ´Ï´Ù. O(n)¸¸Å­ÀÇ »õ·Î¿î °ø°£ÀÌ ¿ä±¸µÇ¸ç, ÇØ´ç °ø°£À¸·Î Á¤·ÄµÈ ¹è¿­ÀÌ ÀÚ¸®Àâ´Â´Ù.
 + **Quick Sort**
-    + ìˆ˜í–‰ ê³¼ì •
-        1. ë¦¬ìŠ¤íŠ¸ ì•ˆì— ìžˆëŠ” ìž„ì˜ì˜ í•œ ìš”ì†Œë¥¼ ì„ íƒí•˜ëŠ”ë°, ì´ë¥¼ pivotì´ë¼ê³  í•œë‹¤.
-        2. pivotì„ ê¸°ì¤€ìœ¼ë¡œ pivotì˜ ê°’ë³´ë‹¤ ìž‘ì€ ìš”ì†Œë“¤ì„ ì™¼ìª½, í° ìš”ì†Œë“¤ì„ ì˜¤ë¥¸ìª½ìœ¼ë¡œ ì˜®ê¸´ë‹¤.
-        3. pivotì„ ì œì™¸í•œ ì™¼ìª½, ì˜¤ë¥¸ìª½ ë¦¬ìŠ¤íŠ¸ ê°ê°ì— ëŒ€í•´ ìœ„ ìž‘ì—…ì„ ë°˜ë³µí•œë‹¤.
-    + ì‹œê°„ë³µìž¡ë„ëŠ” í‰ê· ì ìœ¼ë¡œ O(nlogn)ì´ë©°, ìµœì•…ì˜ ê²½ìš° O(n<sup>2</sup>)ì´ ê±¸ë¦°ë‹¤.
-        + ìµœì•…ì˜ ê²½ìš°ëŠ” ë°°ì—´ì´ ë§¤ìš° ì‹¬í•œ íŽ¸ì°¨(1:n-1)ë¡œ ê³„ì† ë‚˜ëˆ ì§€ëŠ” ê²½ìš°ì´ë‹¤.
-        + pivotì„ ë‹¨ìˆœížˆ ë§¨ ì•ž í˜¹ì€ ë§¨ ë’¤ë¡œ ì„ íƒí•œë‹¤ë©´, ì´ë¯¸ ì •ë ¬ëœ ë¦¬ìŠ¤íŠ¸ê°€ ìž…ë ¥ìœ¼ë¡œ ì£¼ì–´ì¡Œì„ ë•Œ ìµœì•…ì˜ ê²½ìš°ê°€ ëœë‹¤.
-        + ì´ëŸ° ê²½ìš°ë¥¼ ë°©ì§€í•˜ê¸° ìœ„í•´, pivotì„ ìž„ì˜ë¡œ ì •í•˜ëŠ” ê²ƒì„ Randomized Quicksortë¼ê³  í•˜ë©°, ì´ë•Œì˜ ê¸°ëŒ€ê°’ì€ O(nlogn)ì´ë‹¤.
-    + In-place Algorithm(ì œìžë¦¬ ì•Œê³ ë¦¬ì¦˜)ì´ë‹¤.
+    + ¼öÇà °úÁ¤
+        1. ¸®½ºÆ® ¾È¿¡ ÀÖ´Â ÀÓÀÇÀÇ ÇÑ ¿ä¼Ò¸¦ ¼±ÅÃÇÏ´Âµ¥, ÀÌ¸¦ pivotÀÌ¶ó°í ÇÑ´Ù.
+        2. pivotÀ» ±âÁØÀ¸·Î pivotÀÇ °ªº¸´Ù ÀÛÀº ¿ä¼ÒµéÀ» ¿ÞÂÊ, Å« ¿ä¼ÒµéÀ» ¿À¸¥ÂÊÀ¸·Î ¿Å±ä´Ù.
+        3. pivotÀ» Á¦¿ÜÇÑ ¿ÞÂÊ, ¿À¸¥ÂÊ ¸®½ºÆ® °¢°¢¿¡ ´ëÇØ À§ ÀÛ¾÷À» ¹Ýº¹ÇÑ´Ù.
+    + ½Ã°£º¹Àâµµ´Â Æò±ÕÀûÀ¸·Î O(nlogn)ÀÌ¸ç, ÃÖ¾ÇÀÇ °æ¿ì O(n<sup>2</sup>)ÀÌ °É¸°´Ù.
+        + ÃÖ¾ÇÀÇ °æ¿ì´Â ¹è¿­ÀÌ ¸Å¿ì ½ÉÇÑ ÆíÂ÷(1:n-1)·Î °è¼Ó ³ª´²Áö´Â °æ¿ìÀÌ´Ù.
+        + pivotÀ» ´Ü¼øÈ÷ ¸Ç ¾Õ È¤Àº ¸Ç µÚ·Î ¼±ÅÃÇÑ´Ù¸é, ÀÌ¹Ì Á¤·ÄµÈ ¸®½ºÆ®°¡ ÀÔ·ÂÀ¸·Î ÁÖ¾îÁ³À» ¶§ ÃÖ¾ÇÀÇ °æ¿ì°¡ µÈ´Ù.
+        + ÀÌ·± °æ¿ì¸¦ ¹æÁöÇÏ±â À§ÇØ, pivotÀ» ÀÓÀÇ·Î Á¤ÇÏ´Â °ÍÀ» Randomized Quicksort¶ó°í ÇÏ¸ç, ÀÌ¶§ÀÇ ±â´ë°ªÀº O(nlogn)ÀÌ´Ù.
+    + In-place Algorithm(Á¦ÀÚ¸® ¾Ë°í¸®Áò)ÀÌ´Ù.
 + **Heap Sort**
-    + ë°°ì—´ì˜ ìš”ì†Œë¡œ Heapì„ ë§Œë“¤ê³ , Heapì—ì„œ ì›ì†Œë¥¼ í•˜ë‚˜ì”© êº¼ë‚´ì–´ ë°°ì—´ì— ì €ìž¥í•˜ë©´ ì •ë ¬ì´ ëœë‹¤.
-    + ì‹œê°„ë³µìž¡ë„ëŠ” O(nlogn)ì´ ëœë‹¤.
-    + In-place Algorithm(ì œìžë¦¬ ì•Œê³ ë¦¬ì¦˜)ì´ë‹¤.
+    + ¹è¿­ÀÇ ¿ä¼Ò·Î HeapÀ» ¸¸µé°í, Heap¿¡¼­ ¿ø¼Ò¸¦ ÇÏ³ª¾¿ ²¨³»¾î ¹è¿­¿¡ ÀúÀåÇÏ¸é Á¤·ÄÀÌ µÈ´Ù.
+    + ½Ã°£º¹Àâµµ´Â O(nlogn)ÀÌ µÈ´Ù.
+    + In-place Algorithm(Á¦ÀÚ¸® ¾Ë°í¸®Áò)ÀÌ´Ù.
