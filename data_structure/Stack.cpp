@@ -1,4 +1,4 @@
-// Stack ±¸Çö. ¼³Á¤µÈ size°¡ ÃÊ°úµÉ °æ¿ì size¸¦ doubling ÇÔ
+// Stack êµ¬í˜„. ì„¤ì •ëœ sizeê°€ ì´ˆê³¼ë  ê²½ìš° sizeë¥¼ doubling í•¨
 #ifndef MY_ERROR // include guard
 #define MY_ERROR
 #include "../utils/Error.cpp"
@@ -25,7 +25,7 @@ public:
     int size();
 };
 
-// ½ºÅÃÀÌ ²ËÂ÷ÀÖ´ÂÁö ¿©ºÎ¸¦ È®ÀÎ
+// ìŠ¤íƒì´ ê½‰ì°¨ìˆëŠ”ì§€ ì—¬ë¶€ë¥¼ í™•ì¸
 template <typename T> 
 bool Stack<T>::_isFull(){
     if (_top >= _maxSize)
@@ -34,7 +34,7 @@ bool Stack<T>::_isFull(){
         return false;
 }
 
-// »çÀÌÁî ´õºí¸µ
+// ì‚¬ì´ì¦ˆ ë”ë¸”ë§
 template <typename T> 
 void Stack<T>::_sizeDoubling(){
     T *newStack = new T[_maxSize * 2];
@@ -48,7 +48,7 @@ void Stack<T>::_sizeDoubling(){
     _maxSize *= 2;
 }
 
-// »ı¼ºÀÚ. size ±âº»°ª 10
+// ìƒì„±ì. size ê¸°ë³¸ê°’ 10
 template <typename T> 
 Stack<T>::Stack(int size){
     _maxSize = size;
@@ -56,7 +56,7 @@ Stack<T>::Stack(int size){
     _top = -1;
 }
 
-// ½ºÅÃÀÌ ºñ¾îÀÖ´ÂÁö ¿©ºÎ¸¦ È®ÀÎ
+// ìŠ¤íƒì´ ë¹„ì–´ìˆëŠ”ì§€ ì—¬ë¶€ë¥¼ í™•ì¸
 template <typename T> 
 bool Stack<T>::empty(){
     if (_top <= -1)
@@ -65,12 +65,12 @@ bool Stack<T>::empty(){
         return false;
 }
 
-// ½ºÅÃ¿¡ value °ªÀ» pushÇØÁØ´Ù.
+// ìŠ¤íƒì— value ê°’ì„ pushí•´ì¤€ë‹¤.
 template <typename T> 
 void Stack<T>::push(T value){
     _top++;
     
-    // ½ºÅÃÀÌ ¸ğµÎ Â÷¸é, size doubling ÇØÁØ´Ù.
+    // ìŠ¤íƒì´ ëª¨ë‘ ì°¨ë©´, size doubling í•´ì¤€ë‹¤.
     if (_isFull()){
         _sizeDoubling();
     }
@@ -78,8 +78,8 @@ void Stack<T>::push(T value){
     _stack[_top] = value;
 }
 
-// ½ºÅÃÀÇ °¡Àå À§ÀÇ ¿ø¼Ò¸¦ ²¨³»¾î ¹İÈ¯ÇÑ´Ù.
-// ¿ø¼Ò°¡ ¾øÀ» ½Ã, Error.cppÀÇ ElementEmpty ¹ß»ı
+// ìŠ¤íƒì˜ ê°€ì¥ ìœ„ì˜ ì›ì†Œë¥¼ êº¼ë‚´ì–´ ë°˜í™˜í•œë‹¤.
+// ì›ì†Œê°€ ì—†ì„ ì‹œ, Error.cppì˜ ElementEmpty ë°œìƒ
 template <typename T> 
 T Stack<T>::pop(){
     if (empty())
@@ -88,7 +88,7 @@ T Stack<T>::pop(){
         return _stack[_top--];
 }
 
-// ½ºÅÃÀÇ topÀ» ¹İÈ¯ÇÑ´Ù.
+// ìŠ¤íƒì˜ topì„ ë°˜í™˜í•œë‹¤.
 template <typename T> 
 T Stack<T>::top(){
     if (empty())
@@ -97,7 +97,7 @@ T Stack<T>::top(){
         return _stack[_top];   
 }
 
-// ÇöÀç ½ºÅÃÀÇ size¸¦ ¹İÈ¯ÇÑ´Ù.
+// í˜„ì¬ ìŠ¤íƒì˜ sizeë¥¼ ë°˜í™˜í•œë‹¤.
 template <typename T> 
 int Stack<T>::size(){
     return _top + 1;

@@ -1,10 +1,10 @@
-/* Linked List ±¸Çö */
+/* Linked List êµ¬í˜„ */
 #ifndef MY_ERROR // include guard
 #define MY_ERROR
 #include "../utils/Error.cpp"
 #endif
 
-// Linked ListÀÇ ³ëµå
+// Linked Listì˜ ë…¸ë“œ
 template<typename T>
 struct Node{
 public:
@@ -39,7 +39,7 @@ public:
     void sort();
 };
 
-// »õ·Î¿î ³ëµå¸¦ ¹İÈ¯
+// ìƒˆë¡œìš´ ë…¸ë“œë¥¼ ë°˜í™˜
 template <typename T>
 Node<T>* SingleLinkedList<T>::createNode(T value){
     Node<T> *node = new Node<T>;
@@ -49,14 +49,14 @@ Node<T>* SingleLinkedList<T>::createNode(T value){
     return node;
 }
 
-// »ı¼ºÀÚ
+// ìƒì„±ì
 template <typename T>
 SingleLinkedList<T>::SingleLinkedList(){
     head = nullptr;
     tail = nullptr;
 }
 
-// ¼Ò¸êÀÚ. ÇÒ´çµÈ ³ëµåµéÀ» Áö¿ò.
+// ì†Œë©¸ì. í• ë‹¹ëœ ë…¸ë“œë“¤ì„ ì§€ì›€.
 template <typename T>
 SingleLinkedList<T>::~SingleLinkedList(){
     while(head){
@@ -66,18 +66,18 @@ SingleLinkedList<T>::~SingleLinkedList(){
     }
 }
 
-// °¡Àå ¾Õ¿¡ ³ëµå¸¦ Ãß°¡
+// ê°€ì¥ ì•ì— ë…¸ë“œë¥¼ ì¶”ê°€
 template <typename T>
 void SingleLinkedList<T>::push_front(T value){
-    // »õ·Î¿î ³ëµå »ı¼º
+    // ìƒˆë¡œìš´ ë…¸ë“œ ìƒì„±
     Node<T>* node = createNode(value);
     
-    // ´Ù¸¥ ³ëµå°¡ Á¸ÀçÇÏ´Â °æ¿ì, head ¾Õ¿¡ ºÙÀÌ°í head¸¦ ¾÷µ¥ÀÌÆ®.
+    // ë‹¤ë¥¸ ë…¸ë“œê°€ ì¡´ì¬í•˜ëŠ” ê²½ìš°, head ì•ì— ë¶™ì´ê³  headë¥¼ ì—…ë°ì´íŠ¸.
     if (head){
         node->next = head;
         head = node;
     }
-    // ´Ù¸¥ ³ëµå°¡ ¾ø´Â °æ¿ì, head¿Í tailÀ» node·Î ÁöÁ¤.
+    // ë‹¤ë¥¸ ë…¸ë“œê°€ ì—†ëŠ” ê²½ìš°, headì™€ tailì„ nodeë¡œ ì§€ì •.
     else{
         head = node;
         tail = node;
@@ -86,18 +86,18 @@ void SingleLinkedList<T>::push_front(T value){
     _size++;
 }
 
-// °¡Àå µÚ¿¡ ³ëµå¸¦ Ãß°¡
+// ê°€ì¥ ë’¤ì— ë…¸ë“œë¥¼ ì¶”ê°€
 template <typename T>
 void SingleLinkedList<T>::push_back(T value){
-    // »õ·Î¿î ³ëµå »ı¼º
+    // ìƒˆë¡œìš´ ë…¸ë“œ ìƒì„±
     Node<T>* node = createNode(value);
     
-    // ´Ù¸¥ ³ëµå°¡ Á¸ÀçÇÏ´Â °æ¿ì, tail µÚ¿¡ ºÙÀÌ°í tailÀ» ¾÷µ¥ÀÌÆ®.
+    // ë‹¤ë¥¸ ë…¸ë“œê°€ ì¡´ì¬í•˜ëŠ” ê²½ìš°, tail ë’¤ì— ë¶™ì´ê³  tailì„ ì—…ë°ì´íŠ¸.
     if (tail){
         tail->next = node;
         tail = node;
     }
-    // ´Ù¸¥ ³ëµå°¡ ¾ø´Â °æ¿ì, head¿Í tailÀ» node·Î ÁöÁ¤.
+    // ë‹¤ë¥¸ ë…¸ë“œê°€ ì—†ëŠ” ê²½ìš°, headì™€ tailì„ nodeë¡œ ì§€ì •.
     else{
         head = node;
         tail = node;
@@ -106,21 +106,21 @@ void SingleLinkedList<T>::push_back(T value){
     _size++;
 }
 
-// °¡Àå ¾ÕÀÇ ³ëµå¸¦ Á¦°Å
-// ¿ø¼Ò°¡ ¾øÀ» ¶§, È£ÃâÇÒ °æ¿ì error throw
+// ê°€ì¥ ì•ì˜ ë…¸ë“œë¥¼ ì œê±°
+// ì›ì†Œê°€ ì—†ì„ ë•Œ, í˜¸ì¶œí•  ê²½ìš° error throw
 template <typename T>
 void SingleLinkedList<T>::pop_front(){
     if (head){
-        if (head == tail){ // ³ëµå°¡ ÇÏ³ª¹Û¿¡ ¾øÀ» °æ¿ì.
+        if (head == tail){ // ë…¸ë“œê°€ í•˜ë‚˜ë°–ì— ì—†ì„ ê²½ìš°.
             delete head;
             head = tail = nullptr;
             return;
         }
         
-        Node<T> *node = head; // º¯¼ö node¿¡ head°¡ °¡¸®Å°´Â ³ëµå¸¦ ÀúÀå.
+        Node<T> *node = head; // ë³€ìˆ˜ nodeì— headê°€ ê°€ë¦¬í‚¤ëŠ” ë…¸ë“œë¥¼ ì €ì¥.
         
-        head = head->next; // head°¡ °¡¸®Å°´Â ³ëµå¸¦ ´ÙÀ½ ³ëµå·Î ¹Ù²Ù¾îÁÜ
-        delete node; // ±âÁ¸ÀÇ head°¡ °¡¸®Å°´Â ³ëµå¸¦ Á¦°Å(pop)
+        head = head->next; // headê°€ ê°€ë¦¬í‚¤ëŠ” ë…¸ë“œë¥¼ ë‹¤ìŒ ë…¸ë“œë¡œ ë°”ê¾¸ì–´ì¤Œ
+        delete node; // ê¸°ì¡´ì˜ headê°€ ê°€ë¦¬í‚¤ëŠ” ë…¸ë“œë¥¼ ì œê±°(pop)
         
         _size--;
     }
@@ -129,27 +129,27 @@ void SingleLinkedList<T>::pop_front(){
     }
 } 
 
-// °¡Àå µÚÀÇ ³ëµå¸¦ Á¦°Å
-// ¿ø¼Ò°¡ ¾øÀ» ¶§, È£ÃâÇÒ °æ¿ì error throw
+// ê°€ì¥ ë’¤ì˜ ë…¸ë“œë¥¼ ì œê±°
+// ì›ì†Œê°€ ì—†ì„ ë•Œ, í˜¸ì¶œí•  ê²½ìš° error throw
 template <typename T>
 void SingleLinkedList<T>::pop_back(){
     if (tail){
-        if (head == tail){ // ³ëµå°¡ ÇÏ³ª¹Û¿¡ ¾øÀ» °æ¿ì.
+        if (head == tail){ // ë…¸ë“œê°€ í•˜ë‚˜ë°–ì— ì—†ì„ ê²½ìš°.
             delete head;
             head = tail = nullptr;
             return;
         }
         
-        Node<T> *node = head; // º¯¼ö node¿¡ head°¡ °¡¸®Å°´Â ³ëµå¸¦ ÀúÀå.
+        Node<T> *node = head; // ë³€ìˆ˜ nodeì— headê°€ ê°€ë¦¬í‚¤ëŠ” ë…¸ë“œë¥¼ ì €ì¥.
         
-        while(node->next != tail) // nodeÀÇ °ªÀ» tail ¹Ù·Î Àü ³ëµå·Î ¸¸µë.
+        while(node->next != tail) // nodeì˜ ê°’ì„ tail ë°”ë¡œ ì „ ë…¸ë“œë¡œ ë§Œë“¬.
             node = node->next;
         
-        tail = node; // tail¿¡ ¸¶Áö¸·¿¡¼­ µÎ¹øÂ° ³ëµå¸¦ ÀúÀå
-        node = node->next; // node¿¡ ¸¶Áö¸· ³ëµå¸¦ ÀúÀå
-        tail->next = nullptr; // ¸¶Áö¸·¿¡¼­ µÎ¹øÂ° ³ëµå°¡ ¸¶Áö¸· ³ëµå°¡ µÉ °ÍÀÌ´Ï, next °ªÀ» Áö¿öÁÜ.
+        tail = node; // tailì— ë§ˆì§€ë§‰ì—ì„œ ë‘ë²ˆì§¸ ë…¸ë“œë¥¼ ì €ì¥
+        node = node->next; // nodeì— ë§ˆì§€ë§‰ ë…¸ë“œë¥¼ ì €ì¥
+        tail->next = nullptr; // ë§ˆì§€ë§‰ì—ì„œ ë‘ë²ˆì§¸ ë…¸ë“œê°€ ë§ˆì§€ë§‰ ë…¸ë“œê°€ ë  ê²ƒì´ë‹ˆ, next ê°’ì„ ì§€ì›Œì¤Œ.
         
-        delete node; // ¸¶Áö¸· ³ëµå¸¦ »èÁ¦
+        delete node; // ë§ˆì§€ë§‰ ë…¸ë“œë¥¼ ì‚­ì œ
         
         _size--;
     }
@@ -158,49 +158,49 @@ void SingleLinkedList<T>::pop_back(){
     }
 } 
 
-// index°¡ posÀÎ °÷¿¡ value¸¦ »ğÀÔ
-// pos°¡ ¿ø¼Ò °³¼öÀÌ»óÀÏ °æ¿ì °¡Àå µÚ¿¡ »ğÀÔ
-// pos°¡ 0 ÀÌÇÏÀÏ°æ¿ì °¡Àå ¾Õ¿¡ »ğÀÔ.
+// indexê°€ posì¸ ê³³ì— valueë¥¼ ì‚½ì…
+// posê°€ ì›ì†Œ ê°œìˆ˜ì´ìƒì¼ ê²½ìš° ê°€ì¥ ë’¤ì— ì‚½ì…
+// posê°€ 0 ì´í•˜ì¼ê²½ìš° ê°€ì¥ ì•ì— ì‚½ì….
 template <typename T>
 void SingleLinkedList<T>::insert(int pos, T value){
-    // pos°¡ _sizeº¸´Ù Å©°Å³ª °°Àº °æ¿ì´Â °¡Àå µÚ¿¡ »ğÀÔÇØÁÜ.
+    // posê°€ _sizeë³´ë‹¤ í¬ê±°ë‚˜ ê°™ì€ ê²½ìš°ëŠ” ê°€ì¥ ë’¤ì— ì‚½ì…í•´ì¤Œ.
     if (pos >= _size){
         push_back(value);
         return;
     }
-    // pos°¡ 0º¸´Ù ÀÛ°Å³ª °°Àº °æ¿ì´Â °¡Àå ¾Õ¿¡ »ğÀÔÇØÁÜ.
+    // posê°€ 0ë³´ë‹¤ ì‘ê±°ë‚˜ ê°™ì€ ê²½ìš°ëŠ” ê°€ì¥ ì•ì— ì‚½ì…í•´ì¤Œ.
     else if (pos <= 0){
         push_front(value);
         return;
     }
     
-    // »õ·Î¿î ³ëµå »ı¼º
+    // ìƒˆë¡œìš´ ë…¸ë“œ ìƒì„±
     Node<T>* node = createNode(value);
     
-    // »ğÀÔÇÒ À§Ä¡ ¹Ù·Î ¾Õ ³ëµå
+    // ì‚½ì…í•  ìœ„ì¹˜ ë°”ë¡œ ì• ë…¸ë“œ
     Node<T> *prevNode = head;
     for(int i = 0; i < pos - 1; i++) 
         prevNode = prevNode->next;
     
-    // prevNode¿Í (prevNode->next) »çÀÌ¿¡ node¸¦ ³Ö¾îÁÜ.
+    // prevNodeì™€ (prevNode->next) ì‚¬ì´ì— nodeë¥¼ ë„£ì–´ì¤Œ.
     node->next = prevNode->next;
     prevNode->next = node;
     
     _size++;
 }
 
-// value¸¦ °ªÀ¸·Î °¡Áö´Â ³ëµå¸¦ Á¦°Å.
-// ³ëµå¸¦ Á¦°ÅÇÒ ½Ã true ¹İÈ¯, Á¦°ÅÇÏÁö ¾ÊÀ» ½Ã false ¹İÈ¯.
+// valueë¥¼ ê°’ìœ¼ë¡œ ê°€ì§€ëŠ” ë…¸ë“œë¥¼ ì œê±°.
+// ë…¸ë“œë¥¼ ì œê±°í•  ì‹œ true ë°˜í™˜, ì œê±°í•˜ì§€ ì•Šì„ ì‹œ false ë°˜í™˜.
 template <typename T>
 bool SingleLinkedList<T>::remove(T value){
-    // linkedList°¡ ºñ¾îÀÖ´Â °æ¿ì
+    // linkedListê°€ ë¹„ì–´ìˆëŠ” ê²½ìš°
     if (!head)
         return false;
     
     Node<T> *node = head;
     Node<T> *prevNode = head;
     
-    // value °ªÀ» °¡Áø node¸¦ Ã£´Â °úÁ¤
+    // value ê°’ì„ ê°€ì§„ nodeë¥¼ ì°¾ëŠ” ê³¼ì •
     while(node){
         if (node->value == value)
             break;
@@ -209,13 +209,13 @@ bool SingleLinkedList<T>::remove(T value){
         node = node->next;
     }
     
-    // °ª°ú ÀÏÄ¡ÇÏ´Â ³ëµå°¡ ¾ø´Â °æ¿ì
+    // ê°’ê³¼ ì¼ì¹˜í•˜ëŠ” ë…¸ë“œê°€ ì—†ëŠ” ê²½ìš°
     if (!node){
         return false;
     }
-    // °ª°ú ÀÏÄ¡ÇÏ´Â ³ëµå°¡ ÀÖ´Â °æ¿ì
+    // ê°’ê³¼ ì¼ì¹˜í•˜ëŠ” ë…¸ë“œê°€ ìˆëŠ” ê²½ìš°
     else{
-        // LinkedList¿¡ ¿ø¼Ò°¡ ÇÏ³ª¹Û¿¡ ¾ø´Â °æ¿ì.
+        // LinkedListì— ì›ì†Œê°€ í•˜ë‚˜ë°–ì— ì—†ëŠ” ê²½ìš°.
         if (_size == 1){
             head = tail = nullptr;
         }
@@ -261,7 +261,7 @@ void SingleLinkedList<T>::reverse(){
     Node<T>* prev = nullptr;
     Node<T>* node = head;
     
-    // ÇöÀç nodeÀÇ next¸¦ ÀÌÀü node·Î ¹Ù²Ù¾îÁÜ
+    // í˜„ì¬ nodeì˜ nextë¥¼ ì´ì „ nodeë¡œ ë°”ê¾¸ì–´ì¤Œ
     while(node){
         Node<T>* tmp = node->next;
         

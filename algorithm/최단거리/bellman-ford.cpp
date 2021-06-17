@@ -1,6 +1,6 @@
 /*
-    ÇÑ ³ëµå¿¡¼­ ´Ù¸¥ ¸ðµç ³ëµå·ÎÀÇ ÃÖ´Ü °æ·Î¸¦ ±¸ÇÏ´Â º§¸¸ Æ÷µå ¾Ë°í¸®ÁòÀ» ±¸ÇöÇÔ.
-    °£¼±ÀÇ ºñ¿ëÀÌ À½¼ö¶óµµ »ç¿ëÀÌ °¡´ÉÇÏ´Ù.
+    í•œ ë…¸ë“œì—ì„œ ë‹¤ë¥¸ ëª¨ë“  ë…¸ë“œë¡œì˜ ìµœë‹¨ ê²½ë¡œë¥¼ êµ¬í•˜ëŠ” ë²¨ë§Œ í¬ë“œ ì•Œê³ ë¦¬ì¦˜ì„ êµ¬í˜„í•¨.
+    ê°„ì„ ì˜ ë¹„ìš©ì´ ìŒìˆ˜ë¼ë„ ì‚¬ìš©ì´ ê°€ëŠ¥í•˜ë‹¤.
 */
 #include <iostream>
 #include <vector>
@@ -25,7 +25,7 @@ int main(){
     int n, e;
     
     cin >> n >> e;
-    // next = edges[start][i].first, weight = edges[start][i].second :  weight¸¦ °¡ÁßÄ¡·Î °¡Áö´Â start¿¡¼­ next·ÎÀÇ °£¼±ÀÌ ÀÖ´Ù.
+    // next = edges[start][i].first, weight = edges[start][i].second :  weightë¥¼ ê°€ì¤‘ì¹˜ë¡œ ê°€ì§€ëŠ” startì—ì„œ nextë¡œì˜ ê°„ì„ ì´ ìžˆë‹¤.
     vector<vector<pair<int, int>>> edges(n);
     
     for(int i = 0; i < e; i++){
@@ -34,8 +34,8 @@ int main(){
         edges[a - 1].push_back({b - 1, c});
     }
     
-    vector<ll> dist; // ÃÖ´Ü °Å¸®
-    bool isNegativeCycle; // À½¼ö »çÀÌÅ¬ÀÌ ÀÖ´ÂÁö ¿©ºÎ¸¦ ÀúÀå
+    vector<ll> dist; // ìµœë‹¨ ê±°ë¦¬
+    bool isNegativeCycle; // ìŒìˆ˜ ì‚¬ì´í´ì´ ìžˆëŠ”ì§€ ì—¬ë¶€ë¥¼ ì €ìž¥
     tie(dist, isNegativeCycle) = bellmanFord(edges, n, 0);
     
     
@@ -44,25 +44,25 @@ int main(){
     return 0;
 }
 
-// º§¸¸Æ÷µå ¾Ë°í¸®ÁòÀÇ ±¸Çö
+// ë²¨ë§Œí¬ë“œ ì•Œê³ ë¦¬ì¦˜ì˜ êµ¬í˜„
 tuple<vector<ll>, int> bellmanFord(vector<vector<pair<int, int>>> edges, int n, int start){
     vector<ll> dist(n, INF);
     
-    // ½ÃÀÛ ÁöÁ¡¿¡¼­ ½ÃÀÛ ÁöÁ¡À¸·Î °¡´Â °ÍÀº °Å¸®°¡ 0ÀÌ´Ù.
+    // ì‹œìž‘ ì§€ì ì—ì„œ ì‹œìž‘ ì§€ì ìœ¼ë¡œ ê°€ëŠ” ê²ƒì€ ê±°ë¦¬ê°€ 0ì´ë‹¤.
     dist[start] = 0;
-    // i¹øÂ° ¹Ýº¹ ½Ã, ½ÃÀÛ ³ëµå¿¡¼­ºÎÅÍ i°³ÀÇ °£¼±À» Å¸°í Æ¯Á¤ ³ëµå¿¡ µµÂøÇÏ´Â °ÍÀÌ´Ù.
-    // À½¼ö »çÀÌÅ¬ÀÌ ¾ø´Ù¸é, ½ÃÀÛ ³ëµå¿¡¼­ Æ¯Á¤ ³ëµå±îÁö µµ´ÞÇÏ±â À§ÇØ °ÅÃÄ°¡´Â ÃÖ´ë °£¼±ÀÇ ¼ö´Â n - 1°³ÀÌ´Ù.
-    // Áï 0 ~ n - 1¹ø µ·´Ù.
+    // ië²ˆì§¸ ë°˜ë³µ ì‹œ, ì‹œìž‘ ë…¸ë“œì—ì„œë¶€í„° iê°œì˜ ê°„ì„ ì„ íƒ€ê³  íŠ¹ì • ë…¸ë“œì— ë„ì°©í•˜ëŠ” ê²ƒì´ë‹¤.
+    // ìŒìˆ˜ ì‚¬ì´í´ì´ ì—†ë‹¤ë©´, ì‹œìž‘ ë…¸ë“œì—ì„œ íŠ¹ì • ë…¸ë“œê¹Œì§€ ë„ë‹¬í•˜ê¸° ìœ„í•´ ê±°ì³ê°€ëŠ” ìµœëŒ€ ê°„ì„ ì˜ ìˆ˜ëŠ” n - 1ê°œì´ë‹¤.
+    // ì¦‰ 0 ~ n - 1ë²ˆ ëˆë‹¤.
     for(int i = 0; i < n - 1; i++){
-        // j¹øÂ° ¹Ýº¹ ½Ã, ½ÃÀÛ ³ëµå¿¡¼­ºÎÅÍ j ³ëµå¸¦ °ÅÃÄ ´Ù¸¥ ³ëµå·Î °¥ ¼ö ÀÖ´Â ÃÖ´Ü°Å¸®¸¦ Ã£´Â´Ù.
-        // ¸¸¾à start°¡ 0, i°¡ 2, j°¡ 1ÀÏ¶§ 3¹ø ³ëµå·Î °¡´Â ÃÖ´Ü°Å¸®ÀÇ ¾÷µ¥ÀÌÆ®°¡ ÀÌ·ç¾îÁ³´Ù¸é, 
-        // start¿¡¼­ºÎÅÍ 2°³ÀÇ °£¼±À» Å¸°í j·Î µµÂøÇßÀ¸¸ç, j¿¡¼­ 3¹ø ³ëµå·Î °¡´Â °Å¸®°¡ ±âÁ¸ÀÇ ÃÖ´Ü°Å¸®º¸´Ù Âª´Ù´Â °ÍÀ» ÀÇ¹ÌÇÑ´Ù.
+        // jë²ˆì§¸ ë°˜ë³µ ì‹œ, ì‹œìž‘ ë…¸ë“œì—ì„œë¶€í„° j ë…¸ë“œë¥¼ ê±°ì³ ë‹¤ë¥¸ ë…¸ë“œë¡œ ê°ˆ ìˆ˜ ìžˆëŠ” ìµœë‹¨ê±°ë¦¬ë¥¼ ì°¾ëŠ”ë‹¤.
+        // ë§Œì•½ startê°€ 0, iê°€ 2, jê°€ 1ì¼ë•Œ 3ë²ˆ ë…¸ë“œë¡œ ê°€ëŠ” ìµœë‹¨ê±°ë¦¬ì˜ ì—…ë°ì´íŠ¸ê°€ ì´ë£¨ì–´ì¡Œë‹¤ë©´, 
+        // startì—ì„œë¶€í„° 2ê°œì˜ ê°„ì„ ì„ íƒ€ê³  jë¡œ ë„ì°©í–ˆìœ¼ë©°, jì—ì„œ 3ë²ˆ ë…¸ë“œë¡œ ê°€ëŠ” ê±°ë¦¬ê°€ ê¸°ì¡´ì˜ ìµœë‹¨ê±°ë¦¬ë³´ë‹¤ ì§§ë‹¤ëŠ” ê²ƒì„ ì˜ë¯¸í•œë‹¤.
         for(int j = 0; j < n; j++){
-            // ÇöÀç ¹æ¹®ÇÑ ³ëµå¿¡ ¾ÆÁ÷ µµ´ÞÀ» ¸øÇß´Ù¸é ³Ñ¾î°£´Ù.
+            // í˜„ìž¬ ë°©ë¬¸í•œ ë…¸ë“œì— ì•„ì§ ë„ë‹¬ì„ ëª»í–ˆë‹¤ë©´ ë„˜ì–´ê°„ë‹¤.
             if (dist[j] == INF)
                 continue;
             
-            // ÇöÀç ¹æ¹®ÇÑ ³ëµå¿¡ ¿¬°áµÈ ±æÀ» ÅëÇØ ´Ù¸¥ ³ëµå·Î °¡´Â °Å¸®¸¦ ´ÜÃà½ÃÅ³ ¼ö ÀÖ´ÂÁö Ã¼Å©ÇÑ´Ù.
+            // í˜„ìž¬ ë°©ë¬¸í•œ ë…¸ë“œì— ì—°ê²°ëœ ê¸¸ì„ í†µí•´ ë‹¤ë¥¸ ë…¸ë“œë¡œ ê°€ëŠ” ê±°ë¦¬ë¥¼ ë‹¨ì¶•ì‹œí‚¬ ìˆ˜ ìžˆëŠ”ì§€ ì²´í¬í•œë‹¤.
             for(int k = 0; k < edges[j].size(); k++){
                 int next = edges[j][k].first;
                 int distance = edges[j][k].second;
@@ -72,22 +72,22 @@ tuple<vector<ll>, int> bellmanFord(vector<vector<pair<int, int>>> edges, int n, 
         }
     }
     
-    // À½ÀÇ »çÀÌÅ¬ÀÌ ÀÖ´ÂÁö È®ÀÎ.
-    // ¸¸¾à À½ÀÇ »çÀÌÅ¬ÀÌ ¾ø´Ù¸é ½ÃÀÛ ³ëµå¿¡¼­ºÎÅÍ Æ¯Á¤ ³ëµå·Î °¡´Â ÃÖ´Ü°Å¸®¿¡¼­ Å¸°í°¥ ¼ö ÀÖ´Â ÃÖ´ë °£¼±Àº
-    // n - 1°³ÀÌ±â ¶§¹®¿¡ n¹øÂ° ¹Ýº¹¿¡¼­ ÃÖ´Ü°Å¸®ÀÇ ´ÜÃàÀÌ ÀÌ·ç¾îÁø´Ù¸é À½ÀÇ »çÀÌÅ¬ÀÌ ÀÖ´Â°ÍÀÌ´Ù.
+    // ìŒì˜ ì‚¬ì´í´ì´ ìžˆëŠ”ì§€ í™•ì¸.
+    // ë§Œì•½ ìŒì˜ ì‚¬ì´í´ì´ ì—†ë‹¤ë©´ ì‹œìž‘ ë…¸ë“œì—ì„œë¶€í„° íŠ¹ì • ë…¸ë“œë¡œ ê°€ëŠ” ìµœë‹¨ê±°ë¦¬ì—ì„œ íƒ€ê³ ê°ˆ ìˆ˜ ìžˆëŠ” ìµœëŒ€ ê°„ì„ ì€
+    // n - 1ê°œì´ê¸° ë•Œë¬¸ì— në²ˆì§¸ ë°˜ë³µì—ì„œ ìµœë‹¨ê±°ë¦¬ì˜ ë‹¨ì¶•ì´ ì´ë£¨ì–´ì§„ë‹¤ë©´ ìŒì˜ ì‚¬ì´í´ì´ ìžˆëŠ”ê²ƒì´ë‹¤.
     
     bool isNegativeCycle = false;
     for(int i = 0; i < n; i++){
-        // ÇöÀç ¹æ¹®ÇÑ ³ëµå¿¡ ¾ÆÁ÷ µµ´ÞÀ» ¸øÇß´Ù¸é ³Ñ¾î°£´Ù.
+        // í˜„ìž¬ ë°©ë¬¸í•œ ë…¸ë“œì— ì•„ì§ ë„ë‹¬ì„ ëª»í–ˆë‹¤ë©´ ë„˜ì–´ê°„ë‹¤.
         if (dist[i] == INF)
             continue;
         
-        // ÇöÀç ¹æ¹®ÇÑ ³ëµå¿¡ ¿¬°áµÈ ±æÀ» ÅëÇØ ´Ù¸¥ ³ëµå·Î °¡´Â °Å¸®¸¦ ´ÜÃà½ÃÅ³ ¼ö ÀÖ´ÂÁö Ã¼Å©ÇÑ´Ù.
+        // í˜„ìž¬ ë°©ë¬¸í•œ ë…¸ë“œì— ì—°ê²°ëœ ê¸¸ì„ í†µí•´ ë‹¤ë¥¸ ë…¸ë“œë¡œ ê°€ëŠ” ê±°ë¦¬ë¥¼ ë‹¨ì¶•ì‹œí‚¬ ìˆ˜ ìžˆëŠ”ì§€ ì²´í¬í•œë‹¤.
         for(int j = 0; j < edges[i].size(); j++){
             int next = edges[i][j].first;
             int distance = edges[i][j].second;
             
-            // ¸¸¾à ÃÖ´Ü°Å¸®¸¦ ´ÜÃà½ÃÅ³ ¼ö ÀÖ´Ù¸é, À½ÀÇ »çÀÌÅ¬ÀÌ ÀÖ´Ù´Â °ÍÀÓ.
+            // ë§Œì•½ ìµœë‹¨ê±°ë¦¬ë¥¼ ë‹¨ì¶•ì‹œí‚¬ ìˆ˜ ìžˆë‹¤ë©´, ìŒì˜ ì‚¬ì´í´ì´ ìžˆë‹¤ëŠ” ê²ƒìž„.
             if (dist[next] > dist[i] + distance){
                 isNegativeCycle = true;
                 break;
@@ -98,7 +98,7 @@ tuple<vector<ll>, int> bellmanFord(vector<vector<pair<int, int>>> edges, int n, 
     return make_tuple(dist, isNegativeCycle);
 }
 
-// ¹éÁØ ¹®Á¦¸¦ Ç®±âÀ§ÇÑ ÇÔ¼ö
+// ë°±ì¤€ ë¬¸ì œë¥¼ í’€ê¸°ìœ„í•œ í•¨ìˆ˜
 void solve(vector<ll> dist, bool isNegativeCycle, int n){
     if (isNegativeCycle){
         cout << -1 << "\n";

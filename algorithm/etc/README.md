@@ -1,9 +1,9 @@
 
 ### karatsuba.cpp
-Å« ¼öÀÇ °ö¼ÀÀ» Ã³¸®ÇÏ´Â ¾Ë°í¸®ÁòÀÎ Karatsuba AlgorithmÀ» ±¸ÇöÇÔ.  
-"ÇÁ·Î±×·¡¹Ö ´ëÈ¸¿¡¼­ ¹è¿ì´Â ¾Ë°í¸®Áò ¹®Á¦ÇØ°áÀü·«"ÀÇ ³»¿ëÀ» Âü°íÇÏ¿© ±¸ÇöÇÔ.
+í° ìˆ˜ì˜ ê³±ì…ˆì„ ì²˜ë¦¬í•˜ëŠ” ì•Œê³ ë¦¬ì¦˜ì¸ Karatsuba Algorithmì„ êµ¬í˜„í•¨.  
+"í”„ë¡œê·¸ëž˜ë° ëŒ€íšŒì—ì„œ ë°°ìš°ëŠ” ì•Œê³ ë¦¬ì¦˜ ë¬¸ì œí•´ê²°ì „ëžµ"ì˜ ë‚´ìš©ì„ ì°¸ê³ í•˜ì—¬ êµ¬í˜„í•¨.
 
 ### knapsack.cpp
-¹«°Ô Á¦ÇÑÀÌ ÀÖ´Â ¹è³¶¿¡ ¹°°ÇµéÀ» ³ÖÀ» ¶§, ¹è³¶¿¡ ³ÖÀ» ¼ö ÀÖ´Â ¹°°ÇµéÀÇ °¡Ä¡ÀÇ ÃÖ´ë°ªÀ» ±¸ÇÏ´Â ¾Ë°í¸®Áò  
-°¢°¢ÀÇ ¹°°ÇÀ»  ¿©·¯°³·Î ÂÉ°¶ ¼ö ¾ø´Â 0-1 KnapsackÀÌ¸ç, °¢°¢ÀÇ ¹°°ÇÀº ÇÑ°³¾¿¸¸ Á¸ÀçÇÔ.  
-[Æò¹üÇÑ ¹è³¶](https://www.acmicpc.net/problem/12865)
+ë¬´ê²Œ ì œí•œì´ ìžˆëŠ” ë°°ë‚­ì— ë¬¼ê±´ë“¤ì„ ë„£ì„ ë•Œ, ë°°ë‚­ì— ë„£ì„ ìˆ˜ ìžˆëŠ” ë¬¼ê±´ë“¤ì˜ ê°€ì¹˜ì˜ ìµœëŒ€ê°’ì„ êµ¬í•˜ëŠ” ì•Œê³ ë¦¬ì¦˜  
+ê°ê°ì˜ ë¬¼ê±´ì„  ì—¬ëŸ¬ê°œë¡œ ìª¼ê°¤ ìˆ˜ ì—†ëŠ” 0-1 Knapsackì´ë©°, ê°ê°ì˜ ë¬¼ê±´ì€ í•œê°œì”©ë§Œ ì¡´ìž¬í•¨.  
+[í‰ë²”í•œ ë°°ë‚­](https://www.acmicpc.net/problem/12865)

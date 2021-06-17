@@ -1,5 +1,5 @@
 
 
 ### bino_coef.cpp
-ÀÌÇ× °è¼ö(binomial coefficient)À» ±¸ÇöÇÔ.  
-[ÀÌÇ× °è¼ö 3](https://www.acmicpc.net/problem/11401)
+ì´í•­ ê³„ìˆ˜(binomial coefficient)ì„ êµ¬í˜„í•¨.  
+[ì´í•­ ê³„ìˆ˜ 3](https://www.acmicpc.net/problem/11401)

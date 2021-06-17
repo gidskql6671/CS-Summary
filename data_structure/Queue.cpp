@@ -1,15 +1,15 @@
-// queue ±¸Çö. ¼³Á¤µÈ size°¡ ÃÊ°úµÉ °æ¿ì size¸¦ doubling ÇÔ
+// queue êµ¬í˜„. ì„¤ì •ëœ sizeê°€ ì´ˆê³¼ë  ê²½ìš° sizeë¥¼ doubling í•¨
 #ifndef MY_ERROR // include guard
 #define MY_ERROR
 #include "../utils/Error.cpp"
 #endif
 
-// Circular Queue·Î ±¸Çö 
+// Circular Queueë¡œ êµ¬í˜„ 
 template <typename T>
 class Queue{
 private:
-    // _front´Â °¡Àå Ã¹¹øÂ° ¿ø¼Ò ¾ÕÄ­À» °¡¸®Å´. ÇØ´ç Ä­Àº Ç×»ó ºñ¾îÀÖ´Â »óÅÂÀÓ.
-    // _rear´Â °¡Àå ¸¶Áö¸· ¿ø¼Ò¸¦ °¡¸®Å´. ÇØ´ç Ä­ÀÌ ºñ¾îÀÖ´Ù¸é, queue°¡ ºñ¾îÀÖÀ½
+    // _frontëŠ” ê°€ì¥ ì²«ë²ˆì§¸ ì›ì†Œ ì•ì¹¸ì„ ê°€ë¦¬í‚´. í•´ë‹¹ ì¹¸ì€ í•­ìƒ ë¹„ì–´ìˆëŠ” ìƒíƒœì„.
+    // _rearëŠ” ê°€ì¥ ë§ˆì§€ë§‰ ì›ì†Œë¥¼ ê°€ë¦¬í‚´. í•´ë‹¹ ì¹¸ì´ ë¹„ì–´ìˆë‹¤ë©´, queueê°€ ë¹„ì–´ìˆìŒ
     int _front, _rear, _maxSize;
     T *_queue;
     
@@ -31,7 +31,7 @@ template <typename T>
 void Queue<T>::_sizeDoubling(){
     T *newQueue = new T[_maxSize * 2];
     
-    // ¸ğµç µ¥ÀÌÅÍ°¡ Â÷·Ê´ë·Î ÀúÀåµÇ¾î ÀÖ´Â °æ¿ì. (Ã¹¹øÂ° µ¥ÀÌÅÍÀÇ index°¡ 0 ¶Ç´Â 1ÀÎ °æ¿ì)
+    // ëª¨ë“  ë°ì´í„°ê°€ ì°¨ë¡€ëŒ€ë¡œ ì €ì¥ë˜ì–´ ìˆëŠ” ê²½ìš°. (ì²«ë²ˆì§¸ ë°ì´í„°ì˜ indexê°€ 0 ë˜ëŠ” 1ì¸ ê²½ìš°)
     if ((_front + 1) % _maxSize <= 1 ){
         for(int i = (_front + 1) % _maxSize, j = 1; i < _maxSize; i++, j++)
             newQueue[j] = _queue[i];
@@ -81,8 +81,8 @@ void Queue<T>::push(T value){
     _queue[_rear] = value;
 }
 
-// queueÀÇ front¿¡¼­ °ªÀ» »©¿È.
-// queue°¡ ºñ¾îÀÖÀ¸¸é Error.cppÀÇ ElementEmpty ¹ß»ı
+// queueì˜ frontì—ì„œ ê°’ì„ ë¹¼ì˜´.
+// queueê°€ ë¹„ì–´ìˆìœ¼ë©´ Error.cppì˜ ElementEmpty ë°œìƒ
 template <typename T>
 T Queue<T>::pop(){
     if (empty())

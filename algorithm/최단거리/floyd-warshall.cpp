@@ -1,5 +1,5 @@
 /*
-    ¸ðµç ³ëµå¿¡¼­ ¸ðµç ³ëµå·ÎÀÇ ÃÖ´Ü °æ·Î¸¦ ±¸ÇÏ´Â ÇÃ·ÎÀÌµå ¿Í¼£ ¾Ë°í¸®ÁòÀ» ±¸ÇöÇÔ.
+    ëª¨ë“  ë…¸ë“œì—ì„œ ëª¨ë“  ë…¸ë“œë¡œì˜ ìµœë‹¨ ê²½ë¡œë¥¼ êµ¬í•˜ëŠ” í”Œë¡œì´ë“œ ì™€ìƒ¬ ì•Œê³ ë¦¬ì¦˜ì„ êµ¬í˜„í•¨.
 */
 #include <iostream>
 #include <vector>
@@ -38,9 +38,9 @@ int main(){
     return 0;
 }
 
-// ÇÃ·ÎÀÌµå ¿Í¼£ ¾Ë°í¸®Áò ±¸Çö.
-// °ÅÃÄ°¡´Â ³ëµå¸¦ ÅëÇØ ÃÖ´Ü°Å¸®¸¦ °è¼Ó ÃÖ½ÅÈ­ÇØ³ª°£´Ù.
-// ½Ã°£º¹Àâµµ´Â O(n^3)
+// í”Œë¡œì´ë“œ ì™€ìƒ¬ ì•Œê³ ë¦¬ì¦˜ êµ¬í˜„.
+// ê±°ì³ê°€ëŠ” ë…¸ë“œë¥¼ í†µí•´ ìµœë‹¨ê±°ë¦¬ë¥¼ ê³„ì† ìµœì‹ í™”í•´ë‚˜ê°„ë‹¤.
+// ì‹œê°„ë³µìž¡ë„ëŠ” O(n^3)
 vector<vector<int>> floydWarshall(vector<vector<int>> dist, int n){
     for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
@@ -49,9 +49,9 @@ vector<vector<int>> floydWarshall(vector<vector<int>> dist, int n){
         }
     }
     
-    // k : °ÅÃÄ°¡´Â ³ëµå
-    // i : Ãâ¹ß ³ëµå
-    // j : µµÂø ³ëµå
+    // k : ê±°ì³ê°€ëŠ” ë…¸ë“œ
+    // i : ì¶œë°œ ë…¸ë“œ
+    // j : ë„ì°© ë…¸ë“œ
     for(int k = 0; k < n; k++){
         for(int i = 0; i < n; i++){
             for(int j = 0; j < n; j++){
@@ -64,7 +64,7 @@ vector<vector<int>> floydWarshall(vector<vector<int>> dist, int n){
 }
 
 
-// ¹éÁØ ¹®Á¦¸¦ Ç®±âÀ§ÇÑ ÇÔ¼ö
+// ë°±ì¤€ ë¬¸ì œë¥¼ í’€ê¸°ìœ„í•œ í•¨ìˆ˜
 void solve(vector<vector<int>> dist, int n){
     int result = INF;
     
@@ -73,7 +73,7 @@ void solve(vector<vector<int>> dist, int n){
             if (i == j)
                 continue;
             
-            // i -> j·Î °¡´Â °æ·Î¿Í j -> i·Î °¡´Â °æ·Î°¡ ÀÖ´Â °æ¿ì
+            // i -> jë¡œ ê°€ëŠ” ê²½ë¡œì™€ j -> ië¡œ ê°€ëŠ” ê²½ë¡œê°€ ìžˆëŠ” ê²½ìš°
             if (dist[i][j] != INF && dist[j][i] != INF){
                 result = min(result, dist[i][j] + dist[j][i]);
             }

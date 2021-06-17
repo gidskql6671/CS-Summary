@@ -1,6 +1,6 @@
 /* 
-    ¹è³¶ Ã¤¿ì±â ¹®Á¦¸¦ ÇØ°áÇÏ±â À§ÇÑ ¾Ë°í¸®Áò
-    ¹è³¶¿¡ ³ÖÀ» ¼ö ÀÖ´Â ¹°°ÇÀ» ÀÚ¸¦ ¼ö ¾ø´Â 0-1 KnapsackÀ» ÇØ°á.
+    ë°°ë‚­ ì±„ìš°ê¸° ë¬¸ì œë¥¼ í•´ê²°í•˜ê¸° ìœ„í•œ ì•Œê³ ë¦¬ì¦˜
+    ë°°ë‚­ì— ë„£ì„ ìˆ˜ ìžˆëŠ” ë¬¼ê±´ì„ ìžë¥¼ ìˆ˜ ì—†ëŠ” 0-1 Knapsackì„ í•´ê²°.
 */
 #include <iostream>
 #include <vector>
@@ -15,9 +15,9 @@ using namespace std;
 
 int n, k;
 int value[ITEM_COUNT + 1][MAX_WEIGHT + 1];
-int thing[ITEM_COUNT + 1][2]; // thing[i][0], thing[i][1] : °¢°¢ i¹øÂ° ¹°°ÇÀÇ ¹«°Ô¿Í °¡Ä¡
+int thing[ITEM_COUNT + 1][2]; // thing[i][0], thing[i][1] : ê°ê° ië²ˆì§¸ ë¬¼ê±´ì˜ ë¬´ê²Œì™€ ê°€ì¹˜
 
-// inputÀ» Ã³¸®ÇÏ´Â ÇÔ¼ö
+// inputì„ ì²˜ë¦¬í•˜ëŠ” í•¨ìˆ˜
 void input(){
     cin >> n >> k;
     
@@ -25,15 +25,15 @@ void input(){
         cin >> thing[i][0] >> thing[i][1];
 }
 
-// 0-1 Knapsack ¾Ë°í¸®Áò
-// ´ÙÀ½ Á¡È­½ÄÀ» ¹ÙÅÁÀ¸·Î ±¸ÇöµÊ
+// 0-1 Knapsack ì•Œê³ ë¦¬ì¦˜
+// ë‹¤ìŒ ì í™”ì‹ì„ ë°”íƒ•ìœ¼ë¡œ êµ¬í˜„ë¨
 // value[i, w] = 
 //   if wi > w :  value[i - 1, w]
 //   else      :  max{ vi + value[p - 1, w - wk], value[i - 1, w] }
-// value[i, w] ¶õ i°³ÀÇ º¸¼®ÀÌ ÀÖ°í ¹è³¶ÀÇ ¹«°Ô ÇÑµµ°¡ wÀÏ ¶§, ´ãÀ» ¼ö ÀÖ´Â ÃÖ´ë °¡Ä¡¸¦ ¶æÇÑ´Ù.
-// i¹øÂ° º¸¼®ÀÌ ¹è³¶ÀÇ ¹«°Ô ÇÑµµº¸´Ù ¹«°Å¿ì¸é ³ÖÀ» ¼ö ¾øÀ¸¹Ç·Î, i¹øÂ° º¸¼®À» »« i-1°³ÀÇ º¸¼®À» °¡Áö°í ±¸ÇÑ ÃÖÀûÀÇ ÇØ¸¦ °¡Áø´Ù.
-// ±×·¸Áö ¾ÊÀ¸¸é, 'i¹øÂ° º¸¼®À» ³Ö±â À§ÇØ i¹øÂ° º¸¼®¸¸Å­ÀÇ ¹«°Ô¸¦ ºñ¿üÀ» ¶§ ÃÖÀû °ª¿¡ i¹øÂ° º¸¼®ÀÇ °¡Ä¡¸¦ ´õÇÑ °ª'°ú
-//               'i¹øÂ° º¸¼®À» ³ÖÁö ¾Ê°í i - 1°³ÀÇ º¸¼®À» °¡Áö°í ±¸ÇÑ ÃÖÀûÀÇ ÇØ' Áß ´õ ³ôÀº °ªÀ» ÃëÇÑ´Ù.
+// value[i, w] ëž€ iê°œì˜ ë³´ì„ì´ ìžˆê³  ë°°ë‚­ì˜ ë¬´ê²Œ í•œë„ê°€ wì¼ ë•Œ, ë‹´ì„ ìˆ˜ ìžˆëŠ” ìµœëŒ€ ê°€ì¹˜ë¥¼ ëœ»í•œë‹¤.
+// ië²ˆì§¸ ë³´ì„ì´ ë°°ë‚­ì˜ ë¬´ê²Œ í•œë„ë³´ë‹¤ ë¬´ê±°ìš°ë©´ ë„£ì„ ìˆ˜ ì—†ìœ¼ë¯€ë¡œ, ië²ˆì§¸ ë³´ì„ì„ ëº€ i-1ê°œì˜ ë³´ì„ì„ ê°€ì§€ê³  êµ¬í•œ ìµœì ì˜ í•´ë¥¼ ê°€ì§„ë‹¤.
+// ê·¸ë ‡ì§€ ì•Šìœ¼ë©´, 'ië²ˆì§¸ ë³´ì„ì„ ë„£ê¸° ìœ„í•´ ië²ˆì§¸ ë³´ì„ë§Œí¼ì˜ ë¬´ê²Œë¥¼ ë¹„ì› ì„ ë•Œ ìµœì  ê°’ì— ië²ˆì§¸ ë³´ì„ì˜ ê°€ì¹˜ë¥¼ ë”í•œ ê°’'ê³¼
+//               'ië²ˆì§¸ ë³´ì„ì„ ë„£ì§€ ì•Šê³  i - 1ê°œì˜ ë³´ì„ì„ ê°€ì§€ê³  êµ¬í•œ ìµœì ì˜ í•´' ì¤‘ ë” ë†’ì€ ê°’ì„ ì·¨í•œë‹¤.
 int knapsack(){
     for(int i = 1; i <= n; i++){
         for(int j = 1; j <= k; j++){

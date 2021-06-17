@@ -1,7 +1,7 @@
 # ds
-ÀÚ·á±¸Á¶µéÀ» ±¸ÇöÇØµĞ µğ·ºÅä¸®
+ìë£Œêµ¬ì¡°ë“¤ì„ êµ¬í˜„í•´ë‘” ë””ë ‰í† ë¦¬
 
-## µğ·ºÅä¸® ±¸Á¶
+## ë””ë ‰í† ë¦¬ êµ¬ì¡°
 + Stack.cpp
 + Queue.cpp
 + LinkedList.cpp
@@ -9,15 +9,15 @@
 ***
 
 ### Stack.cpp
-¹è¿­·Î StackÀ» ±¸ÇöÇÔ.  
-¹è¿­ÀÌ ²ËÂ÷¸é »çÀÌÁî¸¦ µÎ¹è·Î ´Ã·ÁÁÜ  
-+ push, pop, top, size, empty ±â´É ±¸Çö  
+ë°°ì—´ë¡œ Stackì„ êµ¬í˜„í•¨.  
+ë°°ì—´ì´ ê½‰ì°¨ë©´ ì‚¬ì´ì¦ˆë¥¼ ë‘ë°°ë¡œ ëŠ˜ë ¤ì¤Œ  
++ push, pop, top, size, empty ê¸°ëŠ¥ êµ¬í˜„  
 
 ### Queue.cpp
-¹è¿­·Î Circular Queue¸¦ ±¸ÇöÇÔ.  
-¹è¿­ÀÌ ²ËÂ÷¸é »çÀÌÁî¸¦ µÎ¹è·Î ´Ã·ÁÁÜ  
-+ push, pop, front, back, size, empty ±â´É ±¸Çö  
+ë°°ì—´ë¡œ Circular Queueë¥¼ êµ¬í˜„í•¨.  
+ë°°ì—´ì´ ê½‰ì°¨ë©´ ì‚¬ì´ì¦ˆë¥¼ ë‘ë°°ë¡œ ëŠ˜ë ¤ì¤Œ  
++ push, pop, front, back, size, empty ê¸°ëŠ¥ êµ¬í˜„  
 
 ### LinkedList.cpp
-Single Linked List¸¦ ±¸ÇöÇÔ  
-+ push_front, push_back, pop_front, pop_back, insert, remove, size, reverse, sort ±â´É ±¸Çö  
+Single Linked Listë¥¼ êµ¬í˜„í•¨  
++ push_front, push_back, pop_front, pop_back, insert, remove, size, reverse, sort ê¸°ëŠ¥ êµ¬í˜„  

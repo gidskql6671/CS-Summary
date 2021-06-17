@@ -1,26 +1,26 @@
 /*
-¸Å¿ì Å« ¼öÀÇ °ö¼ÀÀ» ºü¸£°Ô Ã³¸®ÇÏ±â À§ÇÑ Karatsuba Algorithm
+ë§¤ìš° í° ìˆ˜ì˜ ê³±ì…ˆì„ ë¹ ë¥´ê²Œ ì²˜ë¦¬í•˜ê¸° ìœ„í•œ Karatsuba Algorithm
 
-¹è¿­ÀÇ °¢ ÀÎµ¦½º¿¡´Â ³·Àº ÀÚ¸®¼öºÎÅÍ Â÷·Ê´ë·Î ÀúÀåµÈ´Ù.
-Áï, num[0]¿¡´Â 10^0ÀÇ ÀÚ¸®, num[1]¿¡´Â 10^1ÀÇ ÀÚ¸®, ..., num[i]¿¡´Â 10^i ÀÚ¸®ÀÇ ¼ö°¡ ÀúÀåµÈ´Ù.
-À§ÀÇ ÇüÅÂ·Î ¼ö¸¦ ÀúÀåÇÒ ½Ã, °¢ ÀÎµ¦½º°¡ 10ÀÇ ¸î½ÂÀÎÁö¸¦ ³ªÅ¸³»±â ¶§¹®¿¡ °ö¼ÀÀ» ´õ ½±°Ô Ã³¸®ÇÒ ¼ö ÀÖ´Ù.
+ë°°ì—´ì˜ ê° ì¸ë±ìŠ¤ì—ëŠ” ë‚®ì€ ìžë¦¬ìˆ˜ë¶€í„° ì°¨ë¡€ëŒ€ë¡œ ì €ìž¥ëœë‹¤.
+ì¦‰, num[0]ì—ëŠ” 10^0ì˜ ìžë¦¬, num[1]ì—ëŠ” 10^1ì˜ ìžë¦¬, ..., num[i]ì—ëŠ” 10^i ìžë¦¬ì˜ ìˆ˜ê°€ ì €ìž¥ëœë‹¤.
+ìœ„ì˜ í˜•íƒœë¡œ ìˆ˜ë¥¼ ì €ìž¥í•  ì‹œ, ê° ì¸ë±ìŠ¤ê°€ 10ì˜ ëª‡ìŠ¹ì¸ì§€ë¥¼ ë‚˜íƒ€ë‚´ê¸° ë•Œë¬¸ì— ê³±ì…ˆì„ ë” ì‰½ê²Œ ì²˜ë¦¬í•  ìˆ˜ ìžˆë‹¤.
 
-Karatsuba AlgorithmÀÇ ¾ÆÀÌµð¾î´Â ´ÙÀ½°ú °°´Ù.
-nÀÚ¸®ÀÇ µÎ Á¤¼ö a, b´Â ´ÙÀ½°ú °°ÀÌ Ç¥ÇöÇÒ ¼ö ÀÖ´Ù.
+Karatsuba Algorithmì˜ ì•„ì´ë””ì–´ëŠ” ë‹¤ìŒê³¼ ê°™ë‹¤.
+nìžë¦¬ì˜ ë‘ ì •ìˆ˜ a, bëŠ” ë‹¤ìŒê³¼ ê°™ì´ í‘œí˜„í•  ìˆ˜ ìžˆë‹¤.
 a = a1 * 10^(n/2) + a0
 b = b1 * 10^(n/2) + b0
-ÀÌ¸¦ ÅëÇØ a * b¸¦ ´ÙÀ½°ú °°ÀÌ ³ª´­ ¼ö ÀÖ´Ù.
+ì´ë¥¼ í†µí•´ a * bë¥¼ ë‹¤ìŒê³¼ ê°™ì´ ë‚˜ëˆŒ ìˆ˜ ìžˆë‹¤.
 a*b = a1*b1*10^n + (a1*b0 + a0*b1)*10^(n/2) + a0*b0
       ----z2----   ------z1-------            --z0--
-ÇØ´ç ½ÄÀº °ö¼ÀÀÌ ÃÑ 4¹ø ÀÌ·ç¾îÁø´Ù. 
-±×·¯³ª ´ÙÀ½°ú °°Àº º¯ÇüÀ» ÅëÇØ z1À» °ö¼À ÇÑ¹øÀ» ÅëÇØ ±¸ÇÏ¸ç, °ö¼À È½¼ö¸¦ 3¹øÀ¸·Î ÁÙÀÏ ¼ö ÀÖ´Ù.
+í•´ë‹¹ ì‹ì€ ê³±ì…ˆì´ ì´ 4ë²ˆ ì´ë£¨ì–´ì§„ë‹¤. 
+ê·¸ëŸ¬ë‚˜ ë‹¤ìŒê³¼ ê°™ì€ ë³€í˜•ì„ í†µí•´ z1ì„ ê³±ì…ˆ í•œë²ˆì„ í†µí•´ êµ¬í•˜ë©°, ê³±ì…ˆ íšŸìˆ˜ë¥¼ 3ë²ˆìœ¼ë¡œ ì¤„ì¼ ìˆ˜ ìžˆë‹¤.
 (a0+a1)*(b0+b1) = a0*b0 + a1*b0+a0*b1 + a1*b1
                   --z0--  -----z1----   --z2--
 z2 = a1 * b1
 z0 = a0 * b0
 z1 = (a0 + a1) * (b0 + b1) - z0 - z2
 
-À§Ã³·³ °ö¼À È½¼ö¸¦ ÁÙÀÓÀ¸·Î½á ½Ã°£º¹Àâµµ¸¦ O(n^log3)À¸·Î ÁÙÀÏ ¼ö ÀÖ´Ù.
+ìœ„ì²˜ëŸ¼ ê³±ì…ˆ íšŸìˆ˜ë¥¼ ì¤„ìž„ìœ¼ë¡œì¨ ì‹œê°„ë³µìž¡ë„ë¥¼ O(n^log3)ìœ¼ë¡œ ì¤„ì¼ ìˆ˜ ìžˆë‹¤.
 */
 
 #include <iostream>
@@ -61,12 +61,12 @@ int main(){
 
 
 
-// numÀÇ ÀÚ¸´¼ö ¿Ã¸²À» Ã³¸®ÇÑ´Ù.
+// numì˜ ìžë¦¿ìˆ˜ ì˜¬ë¦¼ì„ ì²˜ë¦¬í•œë‹¤.
 void nomalize(vector<int> &num){
-    // °¡Àå Å« ÀÚ¸®¼öÀÇ °ªÀÌ 10ÀÌ»óÀÎ °æ¿ì¸¦ Ã³¸®ÇÏ±â À§ÇØ 0À» Ãß°¡ÇØÁÜ.
+    // ê°€ìž¥ í° ìžë¦¬ìˆ˜ì˜ ê°’ì´ 10ì´ìƒì¸ ê²½ìš°ë¥¼ ì²˜ë¦¬í•˜ê¸° ìœ„í•´ 0ì„ ì¶”ê°€í•´ì¤Œ.
     num.push_back(0);
     
-    // ÀÚ¸®¼öÀÇ ¿Ã¸²À» Ã³¸®ÇÑ´Ù.
+    // ìžë¦¬ìˆ˜ì˜ ì˜¬ë¦¼ì„ ì²˜ë¦¬í•œë‹¤.
     for(int i = 0; i < num.size() - 1; i++){
         if (num[i] < 0){
             int borrow = (abs(num[i]) + 9) / 10;
@@ -79,15 +79,15 @@ void nomalize(vector<int> &num){
         }
     }
     
-    // ¾Õ¿¡ ³²¾ÆÀÖ´Â 0À» Á¦°ÅÇÑ´Ù.
+    // ì•žì— ë‚¨ì•„ìžˆëŠ” 0ì„ ì œê±°í•œë‹¤.
     while(num.size() > 1 && num.back() == 0)
         num.pop_back();
 }
 
-// a¿Í bÀÇ °ö¼À °á°ú¸¦ ¹ÝÈ¯ÇÑ´Ù.
-// ¼ö°¡ ÀÛÀ» ¶§ »ç¿ëÇÒ Á¤¼ö °ö¼À ¾Ë°í¸®Áò.
-// O(n^2)À¸·Î karatsuba algorithmº¸´Ù ½Ã°£º¹Àâµµ´Â Å©Áö¸¸,
-// ±¸ÇöÀÌ °£´ÜÇÏ¿© ¼ö°¡ ÀÛÀ» °æ¿ì ´õ ºü¸£°Ô ¼öÇàµÈ´Ù.
+// aì™€ bì˜ ê³±ì…ˆ ê²°ê³¼ë¥¼ ë°˜í™˜í•œë‹¤.
+// ìˆ˜ê°€ ìž‘ì„ ë•Œ ì‚¬ìš©í•  ì •ìˆ˜ ê³±ì…ˆ ì•Œê³ ë¦¬ì¦˜.
+// O(n^2)ìœ¼ë¡œ karatsuba algorithmë³´ë‹¤ ì‹œê°„ë³µìž¡ë„ëŠ” í¬ì§€ë§Œ,
+// êµ¬í˜„ì´ ê°„ë‹¨í•˜ì—¬ ìˆ˜ê°€ ìž‘ì„ ê²½ìš° ë” ë¹ ë¥´ê²Œ ìˆ˜í–‰ëœë‹¤.
 vector<int> multiply(const vector<int> &a, const vector<int> &b){ 
     vector<int> c(a.size() + b.size() + 1, 0);
     
@@ -103,8 +103,8 @@ vector<int> multiply(const vector<int> &a, const vector<int> &b){
 // a += b * (10^k)
 void addTo(vector<int> &a, const vector<int> &b, int k){
     
-    // ¸¸¾à aÀÇ ÃÖ´ë ÀÚ¸®¼ö°¡ b*10^kÀÇ ÃÖ´ë ÀÚ¸®¼öº¸´Ù ÀÛ´Ù¸é, 
-    // aÀÇ Å©±â¸¦ Å°¿öÁÖ°í Ãß°¡µÈ ÀÚ¸®¼ö´Â 0À¸·Î ÃÊ±âÈ­
+    // ë§Œì•½ aì˜ ìµœëŒ€ ìžë¦¬ìˆ˜ê°€ b*10^kì˜ ìµœëŒ€ ìžë¦¬ìˆ˜ë³´ë‹¤ ìž‘ë‹¤ë©´, 
+    // aì˜ í¬ê¸°ë¥¼ í‚¤ì›Œì£¼ê³  ì¶”ê°€ëœ ìžë¦¬ìˆ˜ëŠ” 0ìœ¼ë¡œ ì´ˆê¸°í™”
     if (a.size() < b.size() + k)
         a.resize(b.size() + k, 0);
     
@@ -116,7 +116,7 @@ void addTo(vector<int> &a, const vector<int> &b, int k){
 }
 
 // a -= b
-// a >= bÀÏ °æ¿ì¿¡¸¸ »ç¿ë °¡´É
+// a >= bì¼ ê²½ìš°ì—ë§Œ ì‚¬ìš© ê°€ëŠ¥
 void subFrom(vector<int> &a, const vector<int> &b){
     for(int i = 0; i < b.size(); i++)
         a[i] -= b[i];
@@ -124,21 +124,21 @@ void subFrom(vector<int> &a, const vector<int> &b){
     nomalize(a);
 }
 
-// a¿Í bÀÇ °ö¼À °á°ú¸¦ ¹ÝÈ¯ÇÑ´Ù.
-// O(n^log3)À¸·Î ¼ö°¡ Å¬ °æ¿ì, ´Ü¼øÇÑ °ö¼Àº¸´Ù ºü¸£°Ô µ¿ÀÛÇÑ´Ù.
-// ´Ù¸¸ ±¸ÇöÀÇ º¹Àâ¼ºÀ¸·Î ÀÎÇØ ¼ö°¡ ÀÛÀ» °æ¿ì ¿ÀÈ÷·Á ´õ ´À¸®°Ô µ¿ÀÛÇÏ¹Ç·Î, 
-// ¼ö°¡ ÀÛÀ» ¶§´Â ´Ü¼øÇÑ °ö¼ÀÀ¸·Î °ªÀ» ±¸ÇÑ´Ù.
+// aì™€ bì˜ ê³±ì…ˆ ê²°ê³¼ë¥¼ ë°˜í™˜í•œë‹¤.
+// O(n^log3)ìœ¼ë¡œ ìˆ˜ê°€ í´ ê²½ìš°, ë‹¨ìˆœí•œ ê³±ì…ˆë³´ë‹¤ ë¹ ë¥´ê²Œ ë™ìž‘í•œë‹¤.
+// ë‹¤ë§Œ êµ¬í˜„ì˜ ë³µìž¡ì„±ìœ¼ë¡œ ì¸í•´ ìˆ˜ê°€ ìž‘ì„ ê²½ìš° ì˜¤ížˆë ¤ ë” ëŠë¦¬ê²Œ ë™ìž‘í•˜ë¯€ë¡œ, 
+// ìˆ˜ê°€ ìž‘ì„ ë•ŒëŠ” ë‹¨ìˆœí•œ ê³±ì…ˆìœ¼ë¡œ ê°’ì„ êµ¬í•œë‹¤.
 vector<int> karatsuba(const vector<int> &a, const vector<int> &b){
     int an = a.size(), bn = b.size();
     
-    // aÀÇ Å©±â°¡ ÀÛÀ» °æ¿ì, ¼­·Î ¹Ù²Ù¾î ÁØ´Ù.
-    // Áï, Ç×»ó a°¡ Å©´Ù°í °£ÁÖÇÏ°í ¾Ë°í¸®ÁòÀ» ÀÛ¼ºÇÒ ¼ö ÀÖ´Ù.
+    // aì˜ í¬ê¸°ê°€ ìž‘ì„ ê²½ìš°, ì„œë¡œ ë°”ê¾¸ì–´ ì¤€ë‹¤.
+    // ì¦‰, í•­ìƒ aê°€ í¬ë‹¤ê³  ê°„ì£¼í•˜ê³  ì•Œê³ ë¦¬ì¦˜ì„ ìž‘ì„±í•  ìˆ˜ ìžˆë‹¤.
     if (an < bn)
         return karatsuba(b, a);
-    // base case : µÑ Áß ÇÏ³ª°¡ 0ÀÎ °æ¿ì
+    // base case : ë‘˜ ì¤‘ í•˜ë‚˜ê°€ 0ì¸ ê²½ìš°
     if (an == 0 || bn == 0)
         return vector<int>();
-    // base case : ¼öÀÇ Å©±â°¡ ºñ±³Àû ÀÛÀº °æ¿ì, ´Ü¼øÇÑ °ö¼ÀÀ¸·Î ±¸ÇÔ.
+    // base case : ìˆ˜ì˜ í¬ê¸°ê°€ ë¹„êµì  ìž‘ì€ ê²½ìš°, ë‹¨ìˆœí•œ ê³±ì…ˆìœ¼ë¡œ êµ¬í•¨.
     if (an <= 50)
         return multiply(a, b);
     
