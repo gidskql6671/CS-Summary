@@ -1,9 +1,4 @@
 // Stack 구현. 설정된 size가 초과될 경우 size를 doubling 함
-#ifndef MY_ERROR // include guard
-#define MY_ERROR
-#include "../utils/Error.cpp"
-#endif
-
 
 template <typename T> 
 class Stack{
@@ -24,6 +19,7 @@ public:
     T top();
     int size();
 };
+
 
 // 스택이 꽉차있는지 여부를 확인
 template <typename T> 
@@ -83,7 +79,7 @@ void Stack<T>::push(T value){
 template <typename T> 
 T Stack<T>::pop(){
     if (empty())
-         throw Error::ElementEmpty;
+         throw "Stack Empty";
     else
         return _stack[_top--];
 }
@@ -92,7 +88,7 @@ T Stack<T>::pop(){
 template <typename T> 
 T Stack<T>::top(){
     if (empty())
-        throw Error::StackEmpty;
+         throw "Stack Empty";
     else
         return _stack[_top];   
 }

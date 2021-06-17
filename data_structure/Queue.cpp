@@ -1,8 +1,5 @@
 // queue 구현. 설정된 size가 초과될 경우 size를 doubling 함
-#ifndef MY_ERROR // include guard
-#define MY_ERROR
-#include "../utils/Error.cpp"
-#endif
+
 
 // Circular Queue로 구현 
 template <typename T>
@@ -86,7 +83,7 @@ void Queue<T>::push(T value){
 template <typename T>
 T Queue<T>::pop(){
     if (empty())
-        throw Error::ElementEmpty;
+        throw "Queue Empty";
     else{
         _front = (_front + 1) % _maxSize;
         return _queue[_front];
@@ -96,7 +93,7 @@ T Queue<T>::pop(){
 template <typename T>
 T Queue<T>::front(){
     if (empty())
-        throw Error::ElementEmpty;
+        throw "Queue Empty";
     else
         return _queue[(_front + 1) % _maxSize];
 }
@@ -104,7 +101,7 @@ T Queue<T>::front(){
 template <typename T>
 T Queue<T>::back(){
     if (empty())
-        throw Error::ElementEmpty;
+        throw "Queue Empty";
     else
         return _queue[_rear];
 }
