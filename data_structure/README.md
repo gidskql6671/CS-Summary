@@ -5,7 +5,7 @@
 + Stack.cpp
 + Queue.cpp
 + LinkedList.cpp
-
++ HashTable.cpp
 ***
 
 ### Stack.cpp
@@ -21,3 +21,8 @@
 ### LinkedList.cpp
 Single Linked List를 구현함  
 + push_front, push_back, pop_front, pop_back, insert, remove, size, reverse, sort 기능 구현  
+
+### HashTable.cpp
+Hash Table을 구현
+Key와 Value로 문자열 값을 가짐.
+문자열은 STL String이 아닌 char*로 구현
