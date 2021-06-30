@@ -2,8 +2,8 @@
 알아두면 좋은 알고리즘들을 정리해둠.
 
 ## 목록
-+ [정렬 (Sort)](#정렬(Sort))
-+ [이항계수 (Binomial Coefficient)](#이항계수(Binomial-Coefficient))
++ [정렬 (Sort)](#정렬Sort)
++ [이항계수 (Binomial Coefficient)](#이항계수Binomial-Coefficient)
 + [최단거리](./최단거리)
 + [기타](./etc)
 
@@ -56,5 +56,5 @@
   
 <br><br><br>
 
-# 💡이항계수(Binomial Coefficient)
+# 💡 이항계수(Binomial Coefficient)
 [이항 계수(Binomial Coefficient) 구현 코드](./이항계수)
