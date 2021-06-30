@@ -3,9 +3,9 @@
 
 ## 목록
 + [정렬 (Sort)](#정렬Sort)
-+ [이항계수 (Binomial Coefficient)](#이항계수Binomial-Coefficient)
-+ [최단거리](./최단거리)
-+ [기타](./etc)
++ [이항 계수 (Binomial Coefficient)](#이항-계수Binomial-Coefficient)
++ [최단 경로 (Shortest Path)](#최단-경로Shortest-Path)
++ [기타](#기타)
 
 <br><br>
 
@@ -56,5 +56,17 @@
   
 <br><br><br>
 
-# 💡 이항계수(Binomial Coefficient)
+# 💡이항 계수(Binomial Coefficient)
 [이항 계수(Binomial Coefficient) 구현 코드](./이항계수)
+
+
+<br><br><br>
+
+# 💡최단 경로(Sortest Path)
+[최단 경로(Shortest Path) 구현 코드](./최단경로)
+
+
+<br><br><br>
+
+# 💡기타
+[기타 잡다한 알고리즘 구현 코드](./etc)
