@@ -1,22 +1,17 @@
-### Algorithm
-
-[정렬](#정렬)
+# Algorithm
+알아두면 좋은 알고리즘들을 정리해둠.
 
 ## 목록
-각 폴더에 Algorithm들을 C++로 구현하였음.
-+ [이항 계수(Binomial Coefficient)](./이항계수)
++ [정렬 (Sort)](#정렬(Sort))
++ [이항계수 (Binomial Coefficient)](#이항계수(Binomial-Coefficient))
 + [최단거리](./최단거리)
 + [기타](./etc)
 
-## 이론
-### 자세한 설명은 블로그에 정리해놨다.
-[Sorting Algorithm - Insertion Sort, Selection Sort, Bubble Sort](https://velog.io/@gidskql6671/Sorting-Algorithm-Insertion-Sort)
-[Sorting Algorithm - Quick Sort, Merge Sort, Heap Sort](https://velog.io/@gidskql6671/Sorting-Algorithm-Quick-Sort-Merge-Sort-Heap-Sort)
+<br><br>
 
-### 💡정렬
-정렬을 하는 가장 큰 이유는 **탐색**을 위해서. 데이터가 정렬되어 있다면, 이진 탐색이라는 강력한 알고리즘을 사용할 수 있다.
-
-[구현 코드](./Sort)
+# 💡 정렬(Sort)
+[정렬(Sort) 구현 코드](./Sort)  
+정렬을 하는 가장 큰 이유는 **탐색**을 위해서. 데이터가 정렬되어 있다면, 이진 탐색이라는 강력한 알고리즘을 사용할 수 있다. 
 
 + **Insertion Sort**
     + 기존의 정렬된 배열에 새로운 원소를 Insert하면서 정렬한다.
@@ -53,4 +48,13 @@
 + **Heap Sort**
     + 배열의 요소로 Heap을 만들고, Heap에서 원소를 하나씩 꺼내어 배열에 저장하면 정렬이 된다.
     + 시간복잡도는 O(nlogn)이 된다.
-    + In-place Algorithm(제자리 알고리즘)이다.
+    + In-place Algorithm(제자리 알고리즘)이다.  
+    
+조금더 상세한 설명 및 시간복잡도 측정 방법 등은 블로그에 정리해놓았다.  
+[Sorting Algorithm - Insertion Sort, Selection Sort, Bubble Sort](https://velog.io/@gidskql6671/Sorting-Algorithm-Insertion-Sort)  
+[Sorting Algorithm - Quick Sort, Merge Sort, Heap Sort](https://velog.io/@gidskql6671/Sorting-Algorithm-Quick-Sort-Merge-Sort-Heap-Sort)
+  
+<br><br><br>
+
+# 💡 이항계수(Binomial Coefficient)
+[이항 계수(Binomial Coefficient) 구현 코드](./이항계수)
