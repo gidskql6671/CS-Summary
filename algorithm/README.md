@@ -1,8 +1,9 @@
 ### Algorithm
 
+[정렬](#정렬)
+
 ## 목록
 각 폴더에 Algorithm들을 C++로 구현하였음.
-+ [정렬 코드](./Sort)
 + [이항 계수(Binomial Coefficient)](./이항계수)
 + [최단거리](./최단거리)
 + [기타](./etc)
@@ -12,8 +13,10 @@
 [Sorting Algorithm - Insertion Sort, Selection Sort, Bubble Sort](https://velog.io/@gidskql6671/Sorting-Algorithm-Insertion-Sort)
 [Sorting Algorithm - Quick Sort, Merge Sort, Heap Sort](https://velog.io/@gidskql6671/Sorting-Algorithm-Quick-Sort-Merge-Sort-Heap-Sort)
 
-### ? 정렬
+### 💡정렬
 정렬을 하는 가장 큰 이유는 **탐색**을 위해서. 데이터가 정렬되어 있다면, 이진 탐색이라는 강력한 알고리즘을 사용할 수 있다.
+
+[구현 코드](./Sort)
 
 + **Insertion Sort**
     + 기존의 정렬된 배열에 새로운 원소를 Insert하면서 정렬한다.
