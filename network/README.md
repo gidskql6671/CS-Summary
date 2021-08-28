@@ -64,3 +64,6 @@ IP Segmentation은 큰 IP 패킷들을 적은 MTU(Maximum Transmission Unit)을 
 
 ---
 ### 4계층: 전송 계층(Transport Layer)
+https://velog.io/@cgotjh/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-OSI-7-%EA%B3%84%EC%B8%B5-OSI-7-LAYER-%EA%B8%B0%EB%B3%B8-%EA%B0%9C%EB%85%90-%EA%B0%81-%EA%B3%84%EC%B8%B5-%EC%84%A4%EB%AA%85
+https://hahahoho5915.tistory.com/12
+https://blockdmask.tistory.com/137
