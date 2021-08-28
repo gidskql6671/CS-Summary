@@ -64,6 +64,23 @@ IP Segmentation은 큰 IP 패킷들을 적은 MTU(Maximum Transmission Unit)을 
 
 ---
 ### 4계층: 전송 계층(Transport Layer)
-https://velog.io/@cgotjh/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-OSI-7-%EA%B3%84%EC%B8%B5-OSI-7-LAYER-%EA%B8%B0%EB%B3%B8-%EA%B0%9C%EB%85%90-%EA%B0%81-%EA%B3%84%EC%B8%B5-%EC%84%A4%EB%AA%85
-https://hahahoho5915.tistory.com/12
-https://blockdmask.tistory.com/137
+종단(End to End) 간의 신뢰성있고 정확한 데이터 전송을 담당하는 계층이다. 정보 전달을 두 호스트(host to host)간 보다는 프로세스(process to process)간의 통신으로 바꾸어 준다. 쉽게 설명하면 서버 프로그램과 클라이언트 프로그램의 통신으로 만들어준다고 생각하면 된다.
+
+상위 계층으로 데이터를 전송하기 위해 Port 번호를 사용한다. 이 포트 번호를 통해 프로세스를 식별할 수 있다.
+
+신뢰성있고 효율적인 데이터 전송을 위해 오류 검출 및 복구, 흐름 제어 등을 수행한다.
+
+- TCP, UDP가 대표적인 프로토콜이다.
+- 데이터의 단위는 TCP일 시 Segment, UDP일 시 Datagram이다.
+
+
+---
+### 5계층: 세션 계층(Session Layer)
+세션 계층부터는 어플리케이션에 관련된 계층이라고 볼 수 있다. 각각의 네트워크로 연결되어 있을 수 있는 장비나 밑단의 클라이언트들의 세션을 관리하는 계층이다. 세션 계층은 통신 장치간 상호작용 및 동기화, 네트워크 오류 검사 및 복구 기능을 수행한다.  
+
+어플리케이션 간에 통신을 하기위한 세션을 만들고, 유지하고, 중단하는 역할을 한다. 세션 계층은 프리젠테이션 계층 사이의 대화를 동기화시키며, 데이터 교환을 관리한다.
+
+- NetBIOS, SSH 등의 프로토콜이 있다.
+- 데이터의 단위는 메시지(message)이다.
+
+---
