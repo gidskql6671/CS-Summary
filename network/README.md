@@ -95,3 +95,8 @@ IP Segmentation은 큰 IP 패킷들을 적은 MTU(Maximum Transmission Unit)을 
 - 데이터의 단위는 메시지(message)이다.
 
 ---
+### 7계층: 응용 계층(Application Layer)
+OSI 모델의 최상위 계층으로 응용 프로그램과 통신 계층 간의 인터페이스를 제공한다.  예를 들어 HTTP라는 응용계층 프로토콜은 응용 프로그램인 웹브라우저에게 필요한 데이터를 송수신할때 사용한다.
+
+- HTTP, FTP, Telnet, DNS 등의 프로토콜이 있다.
+- 데이터의 단위는 메시지(message)이다.
