@@ -1,8 +1,7 @@
-# Data Structure & Algorithm
-자료구조와 알고리즘을 직접 구현할 것이며, C++ STL의 기능들을 비슷하게 구현해본다.
+# CS Summary
+CS에서 기본적인 혹은 중요하다고 생각하는 것들을 정리하는 레포
 
-
-## 프로젝트 구조
+## 목차
 + [자료구조 (data_structure)](./data_structure)
 + [알고리즘 (algorithm)](./algorithm)
 + [네트워크 (network)](./network)
