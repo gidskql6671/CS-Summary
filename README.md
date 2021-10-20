@@ -6,3 +6,4 @@ CS에서 기본적인 혹은 중요하다고 생각하는 것들을 정리하는
 + [알고리즘 (algorithm)](./algorithm)
 + [네트워크 (network)](./network)
 + [웹 (Web)](./web)
++ [운영체제 (OS)](./OS)
