@@ -7,10 +7,7 @@
 
 using namespace std;
 
-
 vector<vector<int>> floydWarshall(vector<vector<int>> dist, int n);
-void solve(vector<vector<int>> dist, int n);
-
 
 int main(){
     ios::sync_with_stdio(false);
@@ -23,17 +20,14 @@ int main(){
     cin >> n >> e;
     
     vector<vector<int>> dist(n, vector<int>(n, 0));
-    
     for(int i = 0; i < e; i++){
         int a, b, c;
         cin >> a >> b >> c;
         
-        dist[a - 1][b - 1] = c;
+        dist[a][b] = c;
     }
     
     vector<vector<int>> minDist = floydWarshall(dist, n);
-    
-    solve(minDist, n);
     
     return 0;
 }
@@ -61,24 +55,4 @@ vector<vector<int>> floydWarshall(vector<vector<int>> dist, int n){
     }
     
     return dist;
-}
-
-
-// 백준 문제를 풀기위한 함수
-void solve(vector<vector<int>> dist, int n){
-    int result = INF;
-    
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            if (i == j)
-                continue;
-            
-            // i -> j로 가는 경로와 j -> i로 가는 경로가 있는 경우
-            if (dist[i][j] != INF && dist[j][i] != INF){
-                result = min(result, dist[i][j] + dist[j][i]);
-            }
-        }
-    }
-    
-    cout << (result == INF ? -1 : result) << "\n";
 }
