@@ -2,10 +2,10 @@
 알아두면 좋은 알고리즘들을 정리해둠.
 
 ## 목록
-+ [정렬 (Sort)](#정렬Sort)
-+ [이항 계수 (Binomial Coefficient)](#이항-계수Binomial-Coefficient)
-+ [최단 경로 (Shortest Path)](#최단-경로Shortest-Path)
-+ [기타](#기타)
++ [💡 정렬 (Sort)](#정렬Sort)
++ [💡 이항 계수 (Binomial Coefficient)](#이항-계수Binomial-Coefficient)
++ [💡 최단 경로 (Shortest Path)](#최단-경로Shortest-Path)
++ [💡 기타](#기타)
 
 <br><br>
 
